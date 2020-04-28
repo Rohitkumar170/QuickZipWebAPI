@@ -1,0 +1,918 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1CC3641D-BD30-41E8-A61A-9CFCF7B03970}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QuickZipWebAPI</RootNamespace>
+    <AssemblyName>QuickZipWebAPI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BusinessLibrary">
+      <HintPath>..\BusinessLibrary\bin\Debug\BusinessLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Encryption">
+      <HintPath>..\..\..\..\..\dll\Encryption.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader">
+      <HintPath>..\..\..\..\..\dll\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.7\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.4\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\ServerRouteConstraint.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AllUMRNController.cs" />
+    <Compile Include="Controllers\BankFormController.cs" />
+    <Compile Include="Controllers\DownloadEmandateController.cs" />
+    <Compile Include="Controllers\DownloadMandateController.cs" />
+    <Compile Include="Controllers\DownloadoldemandateController.cs" />
+    <Compile Include="Controllers\HistoricalMandateController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\OldMandateController.cs" />
+    <Compile Include="Controllers\UMRNHistoryController.cs" />
+    <Compile Include="Controllers\UMRNUploadController.cs" />
+    <Compile Include="Controllers\USerController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Entity\Common.cs" />
+    <Compile Include="Entity\DbSecurity.cs" />
+    <Compile Include="Entity\GetEntityID_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\GetMandateStatus_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\GetYears_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Global.cs" />
+    <Compile Include="Entity\Mirror_tblUserLogin.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\parseJSON_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\QuickCheckEmandate_Angular.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuickCheckEmandate_Angular.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\QuickCheckEmandate_Angular.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\QuickCheckEmandate_Angular.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuickCheckEmandate_Angular.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Split_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_BranchCreation_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_Bulkmandate_25072019_6_00pm_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_Bulkmandate_bkp_18072019_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_Bulkmandate_BKP_29Mar2020_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_Bulkmandate_Physical_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_Bulkmandate_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_CollectionStatus_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_CreateLAndTFile_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_CreatePresenmentFile_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_Dashboard_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_DownloadEMandate_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sp_ENach_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_Entity_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sp_ESign_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_FinalDashbaord_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\SP_GeneraateMandateRegFile_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\SP_GenerateZipFromServiceForHDFC_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\SP_GenerateZipFromService_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_GetDashBoardData_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_GetEmailData_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sp_helpdiagrams_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_Home_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sp_KotakDashboard_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sp_MandateAnalysis_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sp_MandateDetails_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_MandateDirectDebit_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_MandateHistory_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_MandateReport_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_Mandate_bkp_29Jan2020_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_Mandate_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sp_OTP_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sp_Payment_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sp_PostmandateStatus_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_Presenment_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sp_QbackRequest_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\SP_Report_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_SelectForChangeRefrence_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_SelectForPhysical_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_UpdateFileStatus_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_Uploaddata1_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_Uploaddata_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sp_UserLogin_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_user_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_WebSevice_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sp_WindowsService_Result.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sysdiagram.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblAccessRight.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblAddressMaster.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblAllBulkMandate.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblbankData.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblBankHeader.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblBankIMP.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblBankTransAmount.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblBranch.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblBranchUser.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblBulkSMS_MandateWise_Helper.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblCity.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblclientData.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblConsent.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblCountry.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblCustomer.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblCustomerCardDetail.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblDateFormat.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEntity.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEntityBankSetup.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEntityBankSetupDate.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEntityBusinessCode.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEntityCategoryCode.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEntityDebitType.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEntityFrequency.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblEntityMandateMode.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEntityPaymentMode.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEntityPeriondEnableOn.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEntitySponsorcodeFileName.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEntityTodebit.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblErrorCode.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEsignErrorMandateLog.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEsignLogMessageId.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEsignRequest.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblEsignResponse.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblExlUploadedData.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblExlUploadedDataHeader.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblFileFormat.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblFileNumberSequence.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TBLFILESEQUENCE.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblIDFCResponseCode.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblIDFC_SeqCount.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblIFSCBank.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblInCompleteMandate.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblLegacyDetail.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblLegacyHeader.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblLegacyUploaded.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblLoginSessionTrxn.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tbllogMandate.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tbllogMandateDirectDebit.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblLogoImage.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblLogoImage1.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblLogTransaction.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblMailMsgTransaction.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMandate.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMandateActivity.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMandateActivityDate.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMandateActivityLog.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMandateAdhar.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMandateDirectDebit.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMandateDirectdebitUniqueId.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMandateFile.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMandateMobile.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMandateStatu.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMandateStatusMaster.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMandateTransaction.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMandateUniqueId.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMergedData.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMobileUserLogin.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMsgMaster.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblMsgTransaction.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblNPCIResponse.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblNPCIResponseFromService.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblNPCIResponseHDFC.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblPaymentMode.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblPaymentRequest.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblPaymentResponse.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblPresentmentDetailSeqCount.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblPresentmentMaker.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblPresentmentRejectedUMRN.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblPresentmentResponseDetail.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblPresentmentResponseHeader.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblPresentmentSeqcount.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblQbackActivity.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblQbackLogPaymentResponse.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblQbackPaymentRequest.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblQbackPaymentResponse.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblReasonCode.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblRecipientMailId.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblRedirectURL.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblReportMapDB.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblServiceLog.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblSponsorBankCode.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblSponsorBankCodeDetail.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblState.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblStatusMaster.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblTempIFSCBank.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblTransactionPresentment.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblTransactionPresentmentHistory.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblTransPresentmentHeader.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblUserCategoryCode.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblUserLogin.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblUserPaymentMode.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblUserSponsorBankCode.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblUserUtilityCode.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblUtlityCode.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblYoekiResponse.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Tbl_Icon.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Tbl_Links.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tbl_MSG91_DeliveryReport.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\vwKotakBillingReport.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\vwMandateLastTransaction.cs">
+      <DependentUpon>QuickCheckEmandate_Angular.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Allumrn\Allumrnaccesslayer.cs" />
+    <Compile Include="Models\Allumrn\GridData.cs" />
+    <Compile Include="Models\BankForm\BankFormData.cs" />
+    <Compile Include="Models\BankForm\BindBankNameDetails.cs" />
+    <Compile Include="Models\BankForm\BindBankPaymentMode.cs" />
+    <Compile Include="Models\BankForm\BindBankUtilityCode.cs" />
+    <Compile Include="Models\BankForm\BindDebitType.cs" />
+    <Compile Include="Models\BankForm\BindEntityCategorytype.cs" />
+    <Compile Include="Models\BankForm\BindEntitydebitcredit.cs" />
+    <Compile Include="Models\BankForm\BindEntityDetails.cs" />
+    <Compile Include="Models\BankForm\BindEntityDetailsdata.cs" />
+    <Compile Include="Models\BankForm\BindEntityPeriods.cs" />
+    <Compile Include="Models\BankForm\Bindfrequency.cs" />
+    <Compile Include="Models\BankForm\BindLogincheck.cs" />
+    <Compile Include="Models\BankForm\BindLogoImageDetails.cs" />
+    <Compile Include="Models\BankForm\BindSponserCode.cs" />
+    <Compile Include="Models\CommonFlag.cs" />
+    <Compile Include="Models\DownloadEmandate\DownloadEmandateaccesslayer.cs" />
+    <Compile Include="Models\DownloadEmandate\Downloademandatebank.cs" />
+    <Compile Include="Models\DownloadEmandate\DownLoadEmandateBind.cs" />
+    <Compile Include="Models\DownloadMandate\DownloadMandate.cs" />
+    <Compile Include="Models\DownloadMandate\DownloadMandateDetails.cs" />
+    <Compile Include="Models\DownloadMandate\DownloadMandateGridDetails.cs" />
+    <Compile Include="Models\ForgotPassword\Forgotflag.cs" />
+    <Compile Include="Models\ForgotPassword\UserDetails.cs" />
+    <Compile Include="Models\ForgotPassword\Value.cs" />
+    <Compile Include="Models\HistoricalMandate\HistoricalMandateClass.cs" />
+    <Compile Include="Models\HistoricalMandate\HistoricalMandateDataAccess.cs" />
+    <Compile Include="Models\Login\Login.cs" />
+    <Compile Include="Models\Login\Logindetails.cs" />
+    <Compile Include="Models\Login\SaveLoginSessionTrxn.cs" />
+    <Compile Include="Models\OldEmandate\BankBind.cs" />
+    <Compile Include="Models\OldEmandate\Downloadoldemandateaccesslayer.cs" />
+    <Compile Include="Models\OldEmandate\Searchdata.cs" />
+    <Compile Include="Models\OldMandate\downloadOldMandateTableAttibute.cs" />
+    <Compile Include="Models\OldMandate\OldMandateAttribute.cs" />
+    <Compile Include="Models\OldMandate\OldMandateClass.cs" />
+    <Compile Include="Models\UMRNUpload\GridSuccess.cs" />
+    <Compile Include="Models\UMRNUpload\GridUnsuccess.cs" />
+    <Compile Include="Models\UMRNUpload\MainGrid.cs" />
+    <Compile Include="Models\UMRNUpload\MainGridDetails.cs" />
+    <Compile Include="Models\UMRNUpload\UMRNUpload.cs" />
+    <Compile Include="Models\UMRN_History\UMRNHistoryClass.cs" />
+    <Compile Include="Models\UMRN_History\UMRNHistoryDataAccess.cs" />
+    <Compile Include="Models\User\AccessRights.cs" />
+    <Compile Include="Models\User\CategoryCodes.cs" />
+    <Compile Include="Models\User\Checker.cs" />
+    <Compile Include="Models\User\EntityMandateMode.cs" />
+    <Compile Include="Models\User\EntityPaymentMode.cs" />
+    <Compile Include="Models\User\getAccessRights.cs" />
+    <Compile Include="Models\User\getCategoryCode.cs" />
+    <Compile Include="Models\User\getIsPresent.cs" />
+    <Compile Include="Models\User\getMaker.cs" />
+    <Compile Include="Models\User\getPaymentMode.cs" />
+    <Compile Include="Models\User\getsponsorcode.cs" />
+    <Compile Include="Models\User\getutilitycode.cs" />
+    <Compile Include="Models\User\Maker.cs" />
+    <Compile Include="Models\User\NachUser.cs" />
+    <Compile Include="Models\User\SponsorBankCode.cs" />
+    <Compile Include="Models\User\TempData.cs" />
+    <Compile Include="Models\User\User.cs" />
+    <Compile Include="Models\User\UserData.cs" />
+    <Compile Include="Models\User\UserEntity.cs" />
+    <Compile Include="Models\User\UserReport.cs" />
+    <Compile Include="Models\User\Users.cs" />
+    <Compile Include="Models\User\UtilityCodes.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Entity\QuickCheckEmandate_Angular.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>QuickCheckEmandate_Angular.Context.cs</LastGenOutput>
+      <DependentUpon>QuickCheckEmandate_Angular.edmx</DependentUpon>
+    </Content>
+    <Content Include="Entity\QuickCheckEmandate_Angular.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuickCheckEmandate_Angular.edmx</DependentUpon>
+      <LastGenOutput>QuickCheckEmandate_Angular.cs</LastGenOutput>
+    </Content>
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <EntityDeploy Include="Entity\QuickCheckEmandate_Angular.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QuickCheckEmandate_Angular.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Entity\QuickCheckEmandate_Angular.edmx.diagram">
+      <DependentUpon>QuickCheckEmandate_Angular.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50331</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50331/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

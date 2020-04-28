@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="19f7480f0b83485ea22a0a1ced94f453" Name="Diagram1" ZoomLevel="65">
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.Mirror_tblUserLogin" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.sysdiagram" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.Tbl_Icon" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.Tbl_Links" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.TblAccessRight" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblAddressMaster" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblAllBulkMandate" Width="1.5" PointX="6.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblbankData" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblBankIMP" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblBankTransAmount" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblBranch" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblBranchUser" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblclientData" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblConsent" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblCustomer" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblCustomerCardDetail" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblDateFormat" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblEntity" Width="1.5" PointX="2.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblEntityBankSetup" Width="1.5" PointX="12.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblEntityBankSetupDate" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblEntityBusinessCode" Width="1.5" PointX="14.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblEntityCategoryCode" Width="1.5" PointX="14.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblEntityDebitType" Width="1.5" PointX="14.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblEntityFrequency" Width="1.5" PointX="14.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblEntityPaymentMode" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblEntityPeriondEnableOn" Width="1.5" PointX="16.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblEntitySponsorcodeFileName" Width="1.5" PointX="4.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblEntityTodebit" Width="1.5" PointX="6.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblEsignErrorMandateLog" Width="1.5" PointX="16.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblEsignLogMessageId" Width="1.5" PointX="16.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblExlUploadedData" Width="1.5" PointX="16.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblExlUploadedDataHeader" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblFileFormat" Width="1.5" PointX="18.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblFileNumberSequence" Width="1.5" PointX="8.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblIDFC_SeqCount" Width="1.5" PointX="18.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblIDFCResponseCode" Width="1.5" PointX="18.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblIFSCBank" Width="1.5" PointX="18.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblInCompleteMandate" Width="1.5" PointX="10.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblLegacyDetail" Width="1.5" PointX="12.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblLegacyHeader" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.TblLoginSessionTrxn" Width="1.5" PointX="20.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tbllogMandate" Width="1.5" PointX="20.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tbllogMandateDirectDebit" Width="1.5" PointX="4.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblLogoImage" Width="1.5" PointX="22.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblLogTransaction" Width="1.5" PointX="22.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.TblMailMsgTransaction" Width="1.5" PointX="22.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblMandate" Width="1.5" PointX="22.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblMandateActivity" Width="1.5" PointX="18.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblMandateActivityDate" Width="1.5" PointX="24.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblMandateActivityLog" Width="1.5" PointX="24.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblMandateAdhar" Width="1.5" PointX="24.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblMandateDirectDebit" Width="1.5" PointX="24.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblMandateDirectdebitUniqueId" Width="1.5" PointX="6.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblMandateFile" Width="1.5" PointX="12.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblMandateMobile" Width="1.5" PointX="26.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblMandateStatu" Width="1.5" PointX="0.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblMandateStatusMaster" Width="1.5" PointX="26.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblMandateTransaction" Width="1.5" PointX="26.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblMandateUniqueId" Width="1.5" PointX="26.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblMergedData" Width="1.5" PointX="14.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblMobileUserLogin" Width="1.5" PointX="26.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblMsgMaster" Width="1.5" PointX="26.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblMsgTransaction" Width="1.5" PointX="26.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblNPCIResponse" Width="1.5" PointX="28.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblNPCIResponseFromService" Width="1.5" PointX="28.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblNPCIResponseHDFC" Width="1.5" PointX="16.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblPaymentMode" Width="1.5" PointX="28.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblPaymentRequest" Width="1.5" PointX="18.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblPaymentResponse" Width="1.5" PointX="28.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblPresentmentDetailSeqCount" Width="1.5" PointX="6.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblPresentmentMaker" Width="1.5" PointX="8.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblPresentmentResponseDetail" Width="1.5" PointX="10.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblPresentmentResponseHeader" Width="1.5" PointX="26.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblPresentmentSeqcount" Width="1.5" PointX="28.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblQbackActivity" Width="1.5" PointX="30.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblQbackLogPaymentResponse" Width="1.5" PointX="0.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblQbackPaymentRequest" Width="1.5" PointX="30.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblQbackPaymentResponse" Width="1.5" PointX="30.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblReasonCode" Width="1.5" PointX="30.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblRecipientMailId" Width="1.5" PointX="30.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblRedirectURL" Width="1.5" PointX="30.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblReportMapDB" Width="1.5" PointX="30.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblServiceLog" Width="1.5" PointX="12.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblSponsorBankCode" Width="1.5" PointX="30.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblSponsorBankCodeDetail" Width="1.5" PointX="32.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblStatusMaster" Width="1.5" PointX="32.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblTransPresentmentHeader" Width="1.5" PointX="32.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.TblUserCategoryCode" Width="1.5" PointX="32.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblUserLogin" Width="1.5" PointX="32.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblUserPaymentMode" Width="1.5" PointX="32.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblUserSponsorBankCode" Width="1.5" PointX="6.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblUserUtilityCode" Width="1.5" PointX="32.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblUtlityCode" Width="1.5" PointX="34.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tbl_MSG91_DeliveryReport" Width="1.5" PointX="2.75" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblBankHeader" Width="1.5" PointX="34.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.TblBulkSMS_MandateWise_Helper" Width="1.5" PointX="34.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblCity" Width="1.5" PointX="34.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblCountry" Width="1.5" PointX="12.75" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.TblEntityMandateMode" Width="1.5" PointX="34.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblErrorCode" Width="1.5" PointX="34.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblEsignRequest" Width="1.5" PointX="34.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblEsignResponse" Width="1.5" PointX="34.75" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.TBLFILESEQUENCE" Width="1.5" PointX="36.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblLegacyUploaded" Width="1.5" PointX="36.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblLogoImage1" Width="1.5" PointX="36.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblPresentmentRejectedUMRN" Width="1.5" PointX="36.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblState" Width="1.5" PointX="18.75" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblTempIFSCBank" Width="1.5" PointX="36.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblTransactionPresentment" Width="1.5" PointX="36.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblTransactionPresentmentHistory" Width="1.5" PointX="28.75" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.tblYoekiResponse" Width="1.5" PointX="36.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.vwKotakBillingReport" Width="1.5" PointX="36.75" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuickCheckEmandate_AngularModel.vwMandateLastTransaction" Width="1.5" PointX="4.75" PointY="37.75" IsExpanded="true" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
