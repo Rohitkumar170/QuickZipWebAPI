@@ -38,7 +38,6 @@ namespace QuickZip.Models.report_view
             {
                 var Result = Common.Getdata(dbcontext.MultipleResults("[dbo].[SP_Report]").With<bindgrid>().Execute("@QueryType", "@FromDate", "@ToDate", "@ddlUserId", "@UserId", "GetReportData", FromDate, ToDate, Userdrop, DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%")))));
                 return Result;
-
             }
             catch (Exception ex)
             {
