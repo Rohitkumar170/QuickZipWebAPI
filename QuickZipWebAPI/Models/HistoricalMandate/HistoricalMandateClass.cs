@@ -20,7 +20,7 @@ namespace QuickZipWebAPI.Models.HistoricalMandate
         public string RejectedReason { get; set; }
         public string REJECTED { get; set; }
         public string CreatedOn { get; set; }
-        public Boolean is_enach_live { get; set; }
+        public Nullable<bool> is_enach_live { get; set; }
         public string IsScan { get; set; }
         public string JPGPath { get; set; }
         public string TIPPath { get; set; }
@@ -50,7 +50,7 @@ namespace QuickZipWebAPI.Models.HistoricalMandate
         public string PhoneNumber { get; set; }
         public string EmailId { get; set; }
         public string EmandateType { get; set; }
-        public Int64 ActivityId { get; set; }
+        public Nullable<Int64>  ActivityId { get; set; }
         public string Refrence2 { get; set; }     
     }
 }

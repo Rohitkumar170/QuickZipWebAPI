@@ -19,16 +19,16 @@ namespace QuickZipWebAPI.Models.User
         public Int64 PresentmentChecker { get; set; }
         public Int64 BankValidationUserCount { get; set; }
         public Int64 AcValidationUserCount { get; set; }
-        public Boolean IsZipShoreABPS { get; set; }
-        public Boolean IsAllowFundTransfer { get; set; }
+        public Nullable<Boolean> IsZipShoreABPS { get; set; }
+        public Nullable<Boolean> IsAllowFundTransfer { get; set; }
         public string UserType { get; set; }
-        public Boolean IsMandate { get; set; }
-        public Boolean IsBulkMandate { get; set; }
-        public Boolean IsMandateEdit { get; set; }
-        public Boolean IsRefrenceEdit { get; set; }
+        public Nullable<Boolean> IsMandate { get; set; }
+        public Nullable<Boolean> IsBulkMandate { get; set; }
+        public Nullable<Boolean> IsMandateEdit { get; set; }
+        public Nullable<Boolean> IsRefrenceEdit { get; set; }
         public string EmailSendTo { get; set; }
-        public Boolean IsEnableCancel { get; set; }
-        public Boolean IsViewAll { get; set; }
+        public Nullable<Boolean> IsEnableCancel { get; set; }
+        public Nullable<Boolean> IsViewAll { get; set; }
         
         
        
