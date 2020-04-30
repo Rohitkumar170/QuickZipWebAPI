@@ -7,6 +7,6 @@ namespace QuickZipWebAPI.Models.User
 {
     public class getIsPresent
     {
-        public Boolean IsPresentment { get; set; }
+        public Nullable<Boolean> IsPresentment { get; set; }
     }
 }

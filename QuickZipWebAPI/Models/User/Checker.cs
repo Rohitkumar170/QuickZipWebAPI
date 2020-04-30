@@ -7,8 +7,8 @@ namespace QuickZipWebAPI.Models.User
 {
     public class Checker
     {
-        public Boolean IsPresentmentChecker { get; set; }
-        public Boolean IsPresentment { get; set; }
+        public Nullable <Boolean> IsPresentmentChecker { get; set; }
+        public Nullable<Boolean> IsPresentment { get; set; }
 
     }
 }

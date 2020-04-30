@@ -15,7 +15,7 @@ namespace QuickZipWebAPI
             config.MapHttpAttributeRoutes();
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}/{id1}",
+                routeTemplate: "api/{controller}/{id}/{id1}/{id2}/{id3}",
                 defaults: new { id = RouteParameter.Optional }
             );
         }
