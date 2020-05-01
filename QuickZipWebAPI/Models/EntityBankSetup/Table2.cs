@@ -5,9 +5,9 @@ using System.Web;
 
 namespace QuickZipWebAPI.Models.EntityBankSetup
 {
-    public class Entity
+    public class Table2
     {
-        public Nullable<Int64> EntityId { get; set; }
-        public string Name { get; set; }
+        public string name { get; set; }
+        public Nullable<Int64> TotalLength { get; set; }
     }
 }

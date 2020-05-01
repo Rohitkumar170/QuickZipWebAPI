@@ -49,7 +49,7 @@
       <HintPath>..\BusinessLibrary\bin\Debug\BusinessLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Encryption">
-      <HintPath>..\..\..\..\..\dll\Encryption.dll</HintPath>
+      <HintPath>..\..\..\garima\DLL\Encryption.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -58,7 +58,7 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="ExcelDataReader">
-      <HintPath>..\..\..\..\..\dll\ExcelDataReader.dll</HintPath>
+      <HintPath>C:\Users\AIY-005\Desktop\ExcelDataReader.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -742,6 +742,9 @@
     <Compile Include="Models\EntityBankSetup\Entity.cs" />
     <Compile Include="Models\EntityBankSetup\EntityBank.cs" />
     <Compile Include="Models\EntityBankSetup\EntityData.cs" />
+    <Compile Include="Models\EntityBankSetup\Table1.cs" />
+    <Compile Include="Models\EntityBankSetup\Table2.cs" />
+    <Compile Include="Models\EntityBankSetup\Table3.cs" />
     <Compile Include="Models\EntitySetup\AllFieldOfForm.cs" />
     <Compile Include="Models\EntitySetup\BindBank.cs" />
     <Compile Include="Models\EntitySetup\BindCountry.cs" />
