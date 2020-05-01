@@ -714,6 +714,7 @@
     <Compile Include="Models\Allumrn\GridData.cs" />
     <Compile Include="Models\Allumrn\GridDataDetails.cs" />
     <Compile Include="Models\Allumrn\Insertumrn.cs" />
+    <Compile Include="Models\Allumrn\Paging.cs" />
     <Compile Include="Models\BankForm\BankFormData.cs" />
     <Compile Include="Models\BankForm\BindBankNameDetails.cs" />
     <Compile Include="Models\BankForm\BindBankPaymentMode.cs" />
