@@ -18,7 +18,6 @@ namespace QuickZipWebAPI.Controllers
         {
             return obj.GridBind(Entityid, Pageno);
         }
-
         [HttpPost]
         [Route("api/AllUMRN/SearchData")]
         public IEnumerable<GridData> SearchData([FromBody] GridData searchdata)
@@ -44,9 +43,6 @@ namespace QuickZipWebAPI.Controllers
         {
             return obj.GridDataDetails(UMRN, Entityid);
         }
-
-        
-
         //[Route("api/AllUMRN/AddUmrn/{NEWUMRN}/{Customername}/{ReferenceNumber}/{Amount}/{FromDate}/{ToDate}/{Entityid}/{Userid}/{CreatedBy}")]
         //public Dictionary<string, object> AddUmrn(string NEWUMRN, string Customername, string ReferenceNumber, string Amount, string FromDate, string ToDate, string Entityid, string Userid, string CreatedBy )
         //{
