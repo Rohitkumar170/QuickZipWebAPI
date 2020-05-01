@@ -1,12 +1,12 @@
-﻿using QuickZipWebAPI.Models.EntitySetup;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using QuickZipWebAPI.Models.EntitySetup;
 
-namespace QuickZipWebAPI.Controllers
+namespace QuickZip.Controllers
 {
     public class EntitySetupController : ApiController
     {
@@ -21,13 +21,13 @@ namespace QuickZipWebAPI.Controllers
         [Route("api/BingGrid")]
         public Dictionary<string, object> BingGridApi()
         {
-            return ESDA.BingGridDataAccess();
+            return ESDA.BindGridDataAccess();
         }
-        [HttpGet]
+        [HttpPost]
         [Route("api/SaveData")]
-        public Dictionary<string, object> SaveDataApi()
+        public Dictionary<string, object> SaveDataApi([FromBody] AllFieldOfForm allFieldOfForm)
         {
-            return ESDA.BingGridDataAccess();
+            return ESDA.SaveDataDataAccess(allFieldOfForm);
         }
     }
 }
