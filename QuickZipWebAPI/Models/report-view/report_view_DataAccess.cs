@@ -37,11 +37,11 @@ namespace QuickZipWebAPI.Models.report_view
             }
         }
 
-        public Dictionary<string, object> SearchData(string FromDate, string ToDate, string Userdrop, string UserId)
+        public Dictionary<string, object> SearchData(bindgrid1 bind)
         {
             try
             {
-                var Result = Common.Getdata(dbcontext.MultipleResults("[dbo].[SP_Report]").With<bindgrid>().Execute("@QueryType", "@FromDate", "@ToDate", "@ddlUserId", "@UserId", "GetReportData", FromDate, ToDate, Userdrop, DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%")))));
+                var Result = Common.Getdata(dbcontext.MultipleResults("[dbo].[SP_Report]").With<bindgrid>().With<bindgrid1>().Execute("@QueryType", "@FromDate", "@ToDate", "@ddlUserId", "@UserId", "GetReportData", bind.Fromdate, bind.Todate, bind.alldropdown, DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(bind.UserId.Replace("_", "%")))));
                 return Result;
             }
             catch (Exception ex)
@@ -49,5 +49,20 @@ namespace QuickZipWebAPI.Models.report_view
                 throw ex;
             }
         }
+
+
+
+        //public Dictionary<string, object> SearchData(string FromDate, string ToDate, string Userdrop, string UserId)
+        //{
+        //    try
+        //    {
+        //        var Result = Common.Getdata(dbcontext.MultipleResults("[dbo].[SP_Report]").With<bindgrid>().With<bindgrid1>().Execute("@QueryType", "@FromDate", "@ToDate", "@ddlUserId", "@UserId", "GetReportData", FromDate, ToDate, Userdrop, DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%")))));
+        //        return Result;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
     }
 }

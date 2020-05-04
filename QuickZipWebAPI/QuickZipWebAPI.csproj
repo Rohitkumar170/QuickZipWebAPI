@@ -777,6 +777,7 @@
     <Compile Include="Models\OldMandate\OldMandateAttribute.cs" />
     <Compile Include="Models\OldMandate\OldMandateClass.cs" />
     <Compile Include="Models\report-view\bindgrid.cs" />
+    <Compile Include="Models\report-view\bindgrid1.cs" />
     <Compile Include="Models\report-view\BindUser.cs" />
     <Compile Include="Models\report-view\report_view_DataAccess.cs" />
     <Compile Include="Models\UMRNUpload\GridSuccess.cs" />
