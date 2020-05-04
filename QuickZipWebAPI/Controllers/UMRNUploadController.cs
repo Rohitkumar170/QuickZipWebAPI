@@ -7,12 +7,9 @@ using System.IO;
 using ExcelDataReader;
 using System.Net.Http;
 using System.Web.Http;
-using QuickZipWebAPI.Entity;
 using System.Xml;
 using System.Xml.Serialization;
-using QuickZipWebAPI.Models;
 using System.Web;
-
 using QuickZipWebAPI.Models.UMRNUpload;
 using System.Text.RegularExpressions;
 using System.Web.UI;
@@ -24,7 +21,7 @@ using System.Collections;
 using System.Globalization;
 using System.Data.SqlClient;
 
-namespace QuickZipWebAPI.Controllers
+namespace QuickZip.Controllers
 {
     public class UMRNUploadController : ApiController
     {
@@ -57,7 +54,7 @@ namespace QuickZipWebAPI.Controllers
         public Dictionary<string, object> UploadExcel(string UserId, string EntityId)
         {
             
-            string message = "";
+            //string message = "";
             string FileName1 = "";
             HttpResponseMessage result = null;
             var httpRequest = HttpContext.Current.Request;
@@ -69,9 +66,9 @@ namespace QuickZipWebAPI.Controllers
                     HttpPostedFile file = httpRequest.Files[0];
                     Stream stream = file.InputStream;
 
-                    IExcelDataReader reader = null;
+                    //IExcelDataReader reader = null;
 
-                string eid1 = DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%")));
+               // string eid1 = DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%")));
                
              
                 string FileName = Path.GetFileName(file.FileName);

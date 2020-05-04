@@ -3,24 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Data;
-using System.IO;
-using ExcelDataReader;
 using System.Net.Http;
 using System.Web.Http;
-using QuickZipWebAPI.Entity;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Configuration;
-using System.Data.OleDb;
-using System.Text;
-using System.Collections;
-using System.Globalization;
-using System.Data.SqlClient;
 using QuickZipWebAPI.Models.Link_setup;
-using QuickZipWebAPI.Models;
 using System.Web;
 
-namespace QuickZipWebAPI.Controllers
+namespace QuickZip.Controllers
 {
     public class LinkSetupController : ApiController
     {
