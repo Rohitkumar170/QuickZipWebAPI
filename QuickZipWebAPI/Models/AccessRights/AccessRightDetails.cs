@@ -7,6 +7,7 @@ namespace QuickZipWebAPI.Models.AccessRights
 {
     public class AccessRightDetails
     {
+
         public Nullable<Int64> LinkID { get; set; }
         public string LinkName { get; set; }
         public Nullable<bool> IsRead { get; set; }
