@@ -29,6 +29,8 @@ namespace QuickZip.Controllers
         {
             return ESDA.SaveDataDataAccess(allFieldOfForm);
         }
+
+
         [HttpGet]
         [Route("api/BindState/{CountryId}")]
         public Dictionary<string, object> BindStateApi(string CountryId)
@@ -41,5 +43,7 @@ namespace QuickZip.Controllers
         {
             return ESDA.BindCityDataAccess(StateId);
         }
+
+
     }
 }
