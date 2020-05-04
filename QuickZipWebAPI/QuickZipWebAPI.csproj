@@ -719,6 +719,7 @@
     <Compile Include="Models\BankForm\BindEntityDetailsdata.cs" />
     <Compile Include="Models\BankForm\BindEntityPeriods.cs" />
     <Compile Include="Models\BankForm\Bindfrequency.cs" />
+    <Compile Include="Models\BankForm\BindGrid.cs" />
     <Compile Include="Models\BankForm\BindLogincheck.cs" />
     <Compile Include="Models\BankForm\BindLogoImageDetails.cs" />
     <Compile Include="Models\BankForm\BindSponserCode.cs" />
