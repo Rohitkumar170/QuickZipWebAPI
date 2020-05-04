@@ -18,7 +18,7 @@ namespace QuickZip.Controllers
             return ESDA.BindCountryAndBank();
         }
         [HttpGet]
-        [Route("api/BingGrid")]
+        [Route("api/BindGrid")]
         public Dictionary<string, object> BingGridApi()
         {
             return ESDA.BindGridDataAccess();
@@ -28,6 +28,18 @@ namespace QuickZip.Controllers
         public Dictionary<string, object> SaveDataApi([FromBody] AllFieldOfForm allFieldOfForm)
         {
             return ESDA.SaveDataDataAccess(allFieldOfForm);
+        }
+        [HttpGet]
+        [Route("api/BindState/{CountryId}")]
+        public Dictionary<string, object> BindStateApi(string CountryId)
+        {
+            return ESDA.BindStateDataAccess(CountryId);
+        }
+        [HttpGet]
+        [Route("api/BindCity/{StateId}")]
+        public Dictionary<string, object> BindCityApi(string StateId)
+        {
+            return ESDA.BindCityDataAccess(StateId);
         }
     }
 }

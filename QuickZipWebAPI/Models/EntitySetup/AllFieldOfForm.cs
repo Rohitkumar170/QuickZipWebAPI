@@ -55,12 +55,12 @@ namespace QuickZipWebAPI.Models.EntitySetup
         public string Password { get; set; }
         public string confirmpassword { get; set; }
         public string AccountNumber { get; set; }
-        public Boolean ReCheck { get; set; }
+       // public Boolean ReCheck { get; set; }
         public Boolean CheckerRequire { get; set; }
         public string XmlModeType { get; set; }
-        public Boolean IsEnableUserCheck { get; set; }
+        //public Boolean IsEnableUserCheck { get; set; }
         public Boolean ISEnableCancelUser { get; set; }
-        public string dtEntityCode { get; set; }
+//public string dtEntityCode { get; set; }
         public string FullPath { get; set; }
         public string BankValidationAdminCount { get; set; }
         public string BankValidationUserCount { get; set; }
@@ -74,6 +74,21 @@ namespace QuickZipWebAPI.Models.EntitySetup
         public string FrequencyType { get; set; }
         public string ToDebit { get; set; }
         public string Amount { get; set; }
-        public string Activate { get; set; }
+        public Boolean Activate { get; set; }
+        public string FileName1 { get; set; }
+        public string FileName2 { get; set; }
+        public string FileName3 { get; set; }
+        public string FileName4 { get; set; }
+        public string FileName5 { get; set; }
+        public string FileName6 { get; set; }
+        public Boolean FixedAmount_Ch { get; set; }
+        public Boolean MaximumAmount_Ch { get; set; }
+        public Boolean Half_Yearly_Ch { get; set; }
+        public Boolean UntillCancelled_Ch { get; set; }
+        public Boolean To_Ch { get; set; }
+        public Boolean Monthly_Ch { get; set; }
+        public Boolean Quarterly_Ch { get; set; }
+        public Boolean Yearly_Ch { get; set; }
+        public Boolean Presented_Ch { get; set; }
     }
 }
