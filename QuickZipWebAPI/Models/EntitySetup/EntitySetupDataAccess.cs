@@ -224,212 +224,223 @@ namespace QuickZipWebAPI.Models.EntitySetup
                 dtEntityCode = "<dtXml></dtXml>";
                 EntityBCode = "<dtXml></dtXml>";
 
+                var data = "To"; var NEWDATA = "Untill Cancelled";
                 XmlType = "<dtXml>";
-                //XmlType += "<dtXml ";
-                //XmlType += "Value='"+"To"+"'";
-                //if (allFieldOfForm.To_Ch == true)
-                //{
-                //    XmlType += "IsEnable='" + "1" + "'";
-                //}
-                //else
-                //{
-                //    XmlType += "IsEnable='" + "0" + "'";
-                //}
-                //XmlType += "/>";
-                //XmlType += "<dtXml ";
-                //XmlType += "Value='" + "Untill Cancelled" + "'";
-                //if (allFieldOfForm.UntillCancelled_Ch == true)
-                //{
-                //    XmlType += "IsEnable='" + "1" + "'";
-                //}
-                //else
-                //{
-                //    XmlType += "IsEnable='" + "0" + "'";
-                //}
-                //XmlType += "/>";
+                XmlType += "<dtXml ";
+
+                XmlType += "Value=" + @"""" + data + @"""";
+                if (allFieldOfForm.To_Ch == true)
+                {
+                    XmlType += " IsEnable=" + @"""" + 1 + @"""";
+                }
+                else
+                {
+                    XmlType += " IsEnable=" + @"""" + 0 + @"""";
+                }
+                XmlType += " />";
+
+                XmlType += "<dtXml ";
+                XmlType += "Value=" + @"""" + NEWDATA + @"""";
+                if (allFieldOfForm.UntillCancelled_Ch == true)
+                {
+                    XmlType += " IsEnable=" + @"""" + 1 + @"""";
+                }
+                else
+                {
+                    XmlType += " IsEnable=" + @"""" + 0 + @"""";
+                }
+                XmlType += " />";
                 XmlType += "</dtXml>";
-              ///////////////////////////////////////
+                ////////////////////////////////////
+                var SB = "SB"; var CA = "CA"; var CC = "CC"; var SB_NRE = "SB-NRE"; var SB_NRO = "SB-NRO"; var Other = "Other";
                 XmlToDebit = "<dtXml>";
-                //XmlToDebit += "<dtXml ";
-                //XmlToDebit += "Value='" + "SB" + "'";
-                //if (allFieldOfForm.SB_Ch == true)
-                //{
-                //    XmlToDebit += "IsEnable='" + "1" + "'";
-                //}
-                //else
-                //{
-                //    XmlToDebit += "IsEnable='" + "0" + "'";
-                //}
-                //XmlToDebit += "/>";
-                //XmlToDebit += "<dtXml ";
-                //XmlToDebit += "Value='" + "CA" + "'";
-                //if (allFieldOfForm.CA_Ch == true)
-                //{
-                //    XmlToDebit += "IsEnable='" + "1" + "'";
-                //}
-                //else
-                //{
-                //    XmlToDebit += "IsEnable='" + "0" + "'";
-                //}
-                //XmlToDebit += "/>";
-                //XmlToDebit += "<dtXml ";
-                //XmlToDebit += "Value='" + "CC" + "'";
-                //if (allFieldOfForm.CC_Ch == true)
-                //{
-                //    XmlToDebit += "IsEnable='" + "1" + "'";
-                //}
-                //else
-                //{
-                //    XmlToDebit += "IsEnable='" + "0" + "'";
-                //}
-                //XmlToDebit += "/>";
-                //XmlToDebit += "<dtXml ";
-                //XmlToDebit += "Value='" + "SB-NRE" + "'";
-                //if (allFieldOfForm.SB_NRE_Ch == true)
-                //{
-                //    XmlToDebit += "IsEnable='" + "1" + "'";
-                //}
-                //else
-                //{
-                //    XmlToDebit += "IsEnable='" + "0" + "'";
-                //}
-                //XmlToDebit += "/>";
-                //XmlToDebit += "<dtXml ";
-                //XmlToDebit += "Value='" + "SB-NRO" + "'";
-                //if (allFieldOfForm.SB_NRO_Ch == true)
-                //{
-                //    XmlToDebit += "IsEnable='" + "1" + "'";
-                //}
-                //else
-                //{
-                //    XmlToDebit += "IsEnable='" + "0" + "'";
-                //}
-                //XmlToDebit += "/>";
-                //XmlToDebit += "<dtXml ";
-                //XmlToDebit += "Value='" + "Other" + "'";
-                //if (allFieldOfForm.Other_Ch == true)
-                //{
-                //    XmlToDebit += "IsEnable='" + "1" + "'";
-                //}
-                //else
-                //{
-                //    XmlToDebit += "IsEnable='" + "0" + "'";
-                //}
-                //XmlToDebit += "/>";
+                XmlToDebit += "<dtXml ";
+                XmlToDebit += "Value=" + @"""" + SB + @"""";
+                if (allFieldOfForm.SB_Ch == true)
+                {
+                    XmlToDebit += " IsEnable=" + @"""" + 1 + @"""";
+                }
+                else
+                {
+                    XmlToDebit += " IsEnable=" + @"""" + 0 + @"""";
+                }
+                XmlToDebit += " />";
+                XmlToDebit += "<dtXml ";
+                XmlToDebit += "Value=" + @"""" + CA + @"""";
+                if (allFieldOfForm.CA_Ch == true)
+                {
+                    XmlToDebit += " IsEnable=" + @"""" + 1 + @"""";
+                }
+                else
+                {
+                    XmlToDebit += " IsEnable=" + @"""" + 0 + @"""";
+                }
+                XmlToDebit += " />";
+                XmlToDebit += "<dtXml ";
+                XmlToDebit += "Value=" + @"""" + CC + @"""";
+                if (allFieldOfForm.CC_Ch == true)
+                {
+                    XmlToDebit += " IsEnable=" + @"""" + 1 + @"""";
+                }
+                else
+                {
+                    XmlToDebit += " IsEnable=" + @"""" + 0 + @"""";
+                }
+                XmlToDebit += " />";
+                XmlToDebit += "<dtXml ";
+                XmlToDebit += "Value=" + @"""" + SB_NRE + @"""";
+                if (allFieldOfForm.SB_NRE_Ch == true)
+                {
+                    XmlToDebit += " IsEnable=" + @"""" + 1 + @"""";
+                }
+                else
+                {
+                    XmlToDebit += " IsEnable=" + @"""" + 0 + @"""";
+                }
+                XmlToDebit += " />";
+                XmlToDebit += "<dtXml ";
+                XmlToDebit += "Value=" + @"""" + SB_NRO + @"""";
+                if (allFieldOfForm.SB_NRO_Ch == true)
+                {
+                    XmlToDebit += " IsEnable=" + @"""" + 1 + @"""";
+                }
+                else
+                {
+                    XmlToDebit += " IsEnable=" + @"""" + 0 + @"""";
+                }
+                XmlToDebit += " />";
+                XmlToDebit += "<dtXml ";
+                XmlToDebit += "Value=" + @"""" + Other + @"""";
+                if (allFieldOfForm.Other_Ch == true)
+                {
+                    XmlToDebit += " IsEnable=" + @"""" + 1 + @"""";
+                }
+                else
+                {
+                    XmlToDebit += " IsEnable=" + @"""" + 0 + @"""";
+                }
+                XmlToDebit += " />";
                 XmlToDebit += "</dtXml>";
                 ////////////////////////////////////////////////////////////////
+                var Monthly = "Monthly"; var Quarterly = "Quarterly"; var Half_Yearly = "Half-Yearly"; var Yearly = "Yearly";
+                var AsandWhenPresented = "As and When Presented";
                 Xmlfrequency = "<dtXml>";
-                //Xmlfrequency += "<dtXml ";
-                //Xmlfrequency += "Value='" + "Monthly" + "'";
-                //if (allFieldOfForm.Monthly_Ch == true)
-                //{
-                //    Xmlfrequency += "IsEnable='" + "1" + "'";
-                //}
-                //else
-                //{
-                //    Xmlfrequency += "IsEnable='" + "0" + "'";
-                //}
-                //Xmlfrequency += "/>";
-                //Xmlfrequency += "<dtXml ";
-                //Xmlfrequency += "Value='" + "Quarterly" + "'";
-                //if (allFieldOfForm.Quarterly_Ch == true)
-                //{
-                //    Xmlfrequency += "IsEnable='" + "1" + "'";
-                //}
-                //else
-                //{
-                //    Xmlfrequency += "IsEnable='" + "0" + "'";
-                //}
-                //Xmlfrequency += "/>";
-                //Xmlfrequency += "<dtXml ";
-                //Xmlfrequency += "Value='" + "Half-Yearly" + "'";
-                //if (allFieldOfForm.Half_Yearly_Ch == true)
-                //{
-                //    Xmlfrequency += "IsEnable='" + "1" + "'";
-                //}
-                //else
-                //{
-                //    Xmlfrequency += "IsEnable='" + "0" + "'";
-                //}
-                //Xmlfrequency += "/>";
-                //Xmlfrequency += "<dtXml ";
-                //Xmlfrequency += "Value='" + "Yearly" + "'";
-                //if (allFieldOfForm.Yearly_Ch == true)
-                //{
-                //    Xmlfrequency += "IsEnable='" + "1" + "'";
-                //}
-                //else
-                //{
-                //    Xmlfrequency += "IsEnable='" + "0" + "'";
-                //}
-                //Xmlfrequency += "/>";
-                //Xmlfrequency += "<dtXml ";
-                //Xmlfrequency += "Value='" + "As and When Presented" + "'";
-                //if (allFieldOfForm.Presented_Ch == true)
-                //{
-                //    Xmlfrequency += "IsEnable='" + "1" + "'";
-                //}
-                //else
-                //{
-                //    Xmlfrequency += "IsEnable='" + "0" + "'";
-                //}
-                //Xmlfrequency += "/>";
+                Xmlfrequency += "<dtXml ";
+                Xmlfrequency += "Value=" + @"""" + Monthly + @"""";
+                if (allFieldOfForm.Monthly_Ch == true)
+                {
+                    Xmlfrequency += " IsEnable=" + @"""" + 1 + @"""";
+                }
+                else
+                {
+                    Xmlfrequency += " IsEnable=" + @"""" + 0 + @"""";
+                }
+                Xmlfrequency += " />";
+                Xmlfrequency += "<dtXml ";
+                Xmlfrequency += "Value=" + @"""" + Quarterly + @"""";
+                if (allFieldOfForm.Quarterly_Ch == true)
+                {
+                    Xmlfrequency += " IsEnable=" + @"""" + 1 + @"""";
+                }
+                else
+                {
+                    Xmlfrequency += " IsEnable=" + @"""" + 0 + @"""";
+                }
+                Xmlfrequency += " />";
+                Xmlfrequency += "<dtXml ";
+                Xmlfrequency += "Value=" + @"""" + Half_Yearly + @"""";
+                if (allFieldOfForm.Half_Yearly_Ch == true)
+                {
+                    Xmlfrequency += " IsEnable=" + @"""" + 1 + @"""";
+                }
+                else
+                {
+                    Xmlfrequency += " IsEnable=" + @"""" + 0 + @"""";
+                }
+                Xmlfrequency += " />";
+                Xmlfrequency += "<dtXml ";
+                Xmlfrequency += "Value=" + @"""" + Yearly + @"""";
+                if (allFieldOfForm.Yearly_Ch == true)
+                {
+                    Xmlfrequency += " IsEnable=" + @"""" + 1 + @"""";
+                }
+                else
+                {
+                    Xmlfrequency += " IsEnable=" + @"""" + 0 + @"""";
+                }
+                Xmlfrequency += " />";
+                Xmlfrequency += "<dtXml ";
+                Xmlfrequency += "Value=" + @"""" + AsandWhenPresented + @"""";
+                if (allFieldOfForm.Presented_Ch == true)
+                {
+                    Xmlfrequency += " IsEnable=" + @"""" + 1 + @"""";
+                }
+                else
+                {
+                    Xmlfrequency += " IsEnable=" + @"""" + 0 + @"""";
+                }
+                Xmlfrequency += " />";
                 Xmlfrequency += "</dtXml>";
                 /////////////////////////////////////////////////////////////
+                var FixedAmount = "Fixed Amount"; var MaximumAmount = "Maximum Amount";
                 Xmldebittype = "<dtXml>";
-                //Xmldebittype += "<dtXml ";
-                //Xmldebittype += "Value=" + "" +"Fixed Amount" +"" + "";
-                //if (allFieldOfForm.FixedAmount_Ch == true)
-                //{
-                //    Xmldebittype += "IsEnable=" + ""+ "1" +""+ "";
-                //}
-                //else
-                //{
-                //    Xmldebittype += "IsEnable='" + "0" + "'";
-                //}
-                //Xmldebittype += "/>";
-                //Xmldebittype += "<dtXml ";
-                //Xmldebittype += "Value='" + "Maximum Amount" + "'";
-                //if (allFieldOfForm.MaximumAmount_Ch == true)
-                //{
-                //    Xmldebittype += "IsEnable='" + "1" + "'";
-                //}
-                //else
-                //{
-                //    Xmldebittype += "IsEnable='" + "0" + "'";
-                //}
-                //Xmldebittype += "/>";
+                Xmldebittype += "<dtXml ";
+                Xmldebittype += "Value=" + @"""" + FixedAmount + @"""";
+                if (allFieldOfForm.FixedAmount_Ch == true)
+                {
+                    Xmldebittype += " IsEnable=" + @"""" + 1 + @"""";
+                }
+                else
+                {
+                    Xmldebittype += " IsEnable=" + @"""" + 0 + @"""";
+                }
+                Xmldebittype += " />";
+                Xmldebittype += "<dtXml ";
+                Xmldebittype += "Value=" + @"""" + MaximumAmount + @"""";
+                if (allFieldOfForm.MaximumAmount_Ch == true)
+                {
+                    Xmldebittype += " IsEnable=" + @"""" + 1 + @"""";
+                }
+                else
+                {
+                    Xmldebittype += " IsEnable=" + @"""" + 0 + @"""";
+                }
+                Xmldebittype += " />";
                 Xmldebittype += "</dtXml>";
-                //////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////
                 dtPaymentMode = "<dtXml>";
-                //dtPaymentMode += "<dtXml ";
-                //if (allFieldOfForm.Cash_Ch == true)
-                //{
-                //    dtPaymentMode += "PaymentMode='" + "Cash" + "'";
-                //    dtPaymentMode += "/>";
-                //}
-                //if (allFieldOfForm.Cheque_Ch == true)
-                //{
-                //    dtPaymentMode += "PaymentMode='" + "Cheque" + "'";
-                //    dtPaymentMode += "/>";
-                //}
-                //if (allFieldOfForm.DemandDraft_Ch == true)
-                //{
-                //    dtPaymentMode += "PaymentMode='" + "DD" + "'";
-                //    dtPaymentMode += "/>";
-                //}
-                //if (allFieldOfForm.Electronic_Ch == true)
-                //{
-                //    dtPaymentMode += "PaymentMode='" + "E" + "'";
-                //    dtPaymentMode += "/>";
-                //}
+                var Cash = "Cash"; var Cheque = "Cheque"; var DD = "DD"; var E = "E";
+                if (allFieldOfForm.Cash_Ch == true)
+                {
+                    dtPaymentMode += "<dtXml ";
+                    dtPaymentMode += "PaymentMode=" + @"""" + Cash + @"""";
+                    dtPaymentMode += " />";
+                }
+                if (allFieldOfForm.Cheque_Ch == true)
+                {
+                    dtPaymentMode += "<dtXml ";
+                    dtPaymentMode += "PaymentMode=" + @"""" + Cheque + @"""";
+                    dtPaymentMode += " />";
+                }
+                if (allFieldOfForm.DemandDraft_Ch == true)
+                {
+                    dtPaymentMode += "<dtXml ";
+                    dtPaymentMode += "PaymentMode=" + @"""" + DD + @"""";
+                    dtPaymentMode += " />";
+                }
+                if (allFieldOfForm.Electronic_Ch == true)
+                {
+                    dtPaymentMode += "<dtXml ";
+                    dtPaymentMode += "PaymentMode=" + @"""" + E + @"""";
+                    dtPaymentMode += " />";
+                }
                 dtPaymentMode += "</dtXml>";
                 ///////////////////////////////////////////////////////////////
                 XmlModeType = "<dtXml></dtXml>";
                 //XmlModeType += "<dtXml ";
                 //if (allFieldOfForm.IsPhysicalMandateCh == true)
                 //{
-                //    XmlModeType += "Physical='" + "1" + "'";
+                //    XmlModeType += "Physical=" + @"""" + 1 + @"""";
                 //}
 
                 dtBankAmount = "<dtXml></dtXml>";
@@ -457,7 +468,7 @@ namespace QuickZipWebAPI.Models.EntitySetup
 
                 //{
 
-                var Result = Common.Getdata(dbcontext.MultipleResults("[dbo].[Sp_Entity]").With<CommonClass>().Execute(
+                var Result = Common.Getdata(dbcontext.MultipleResults("[dbo].[Sp_Entity]").With<CommonClass>().With<CommonClass>().Execute(
                     "@QueryType", "@InstructingMemberId", "@XmlSponsorBankCode", "@Type", "@Code", "@Name", "@ContactPerson",
                 "@SponsorBankCode", "@UtilityCode", "@SponsorBankName", "@UserId", "@Addr1", "@Email", "@CountryId", "@CityId", "@StateId",
                         "@Mobile", "@Pincode", "@ImagePath", "@UserName", "@password", "@passwordKey"
