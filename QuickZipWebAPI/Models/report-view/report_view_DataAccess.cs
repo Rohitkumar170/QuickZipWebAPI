@@ -1,22 +1,17 @@
-﻿using BusinessLibrary;
-using QuickZipWebAPI.Entity;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using QuickZipWebAPI.Models.report_view;
 using System.Web;
-using System.IO;
-using System.Net;
-using System.Net.Mail;
-using System.Text;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
 using System.Configuration;
-using System.Net.NetworkInformation;
+using BusinessLibrary;
+using QuickZipWebAPI.Entity;
+using System.Threading.Tasks;
 
 
 
-namespace QuickZipWebAPI.Models.report_view
+namespace QuickZip.Models.report_view
 {
     public class report_view_DataAccess
     {
