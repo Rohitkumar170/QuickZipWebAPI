@@ -49,7 +49,7 @@
       <HintPath>..\BusinessLibrary\bin\Debug\BusinessLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Encryption">
-      <HintPath>C:\Users\Neha\Desktop\Encryption.dll</HintPath>
+      <HintPath>C:\Users\ABSK\Desktop\Encryption.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -58,7 +58,7 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="ExcelDataReader">
-      <HintPath>C:\Users\Neha\Downloads\ExcelDataReader.dll</HintPath>
+      <HintPath>C:\Users\ABSK\Desktop\ExcelDataReader.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -714,7 +714,6 @@
     <Compile Include="Models\Allumrn\GridData.cs" />
     <Compile Include="Models\Allumrn\GridDataDetails.cs" />
     <Compile Include="Models\Allumrn\Insertumrn.cs" />
-    <Compile Include="Models\Allumrn\Paging.cs" />
     <Compile Include="Models\BankForm\BankFormData.cs" />
     <Compile Include="Models\BankForm\BindBankNameDetails.cs" />
     <Compile Include="Models\BankForm\BindBankPaymentMode.cs" />
@@ -745,7 +744,10 @@
     <Compile Include="Models\EntityBankSetup\EntityData.cs" />
     <Compile Include="Models\EntitySetup\AllFieldOfForm.cs" />
     <Compile Include="Models\EntitySetup\BindBank.cs" />
+    <Compile Include="Models\EntitySetup\BindCity.cs" />
     <Compile Include="Models\EntitySetup\BindCountry.cs" />
+    <Compile Include="Models\EntitySetup\BindState.cs" />
+    <Compile Include="Models\EntitySetup\CommonClass.cs" />
     <Compile Include="Models\EntitySetup\EntityBusinessCode.cs" />
     <Compile Include="Models\EntitySetup\EntitySetupDataAccess.cs" />
     <Compile Include="Models\EntitySetup\MainGrid.cs" />
