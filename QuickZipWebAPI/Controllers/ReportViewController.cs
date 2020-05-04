@@ -4,10 +4,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using QuickZip.Models;
-using QuickZip.Models.report_view;
+using QuickZipWebAPI.Models;
+using QuickZipWebAPI.Models.report_view;
 
-namespace QuickZip.Controllers
+namespace QuickZipWebAPI.Controllers
 {
     public class ReportViewController : ApiController
     {
@@ -21,11 +21,19 @@ namespace QuickZip.Controllers
         }
 
 
-        [HttpGet]
-        [Route("api/ReportView/Bindgrid/{FromDate}/{ToDate}/{username}/{userid}")]
-        public Dictionary<string, object> SearchData(string FromDate, string ToDate, string username, string UserId)
+        //[HttpGet]
+        //[Route("api/ReportView/SearchData/{FromDate}/{ToDate}/{userdrop}/{userid}")]
+        //public Dictionary<string, object> SearchData(string FromDate, string ToDate, string userdrop, string UserId)
+        //{
+        //    return objuser.SearchData(FromDate,ToDate, userdrop, UserId);
+        //}
+
+
+        [HttpPost]
+        [Route("api/ReportView/SearchData")]
+        public Dictionary<string, object> SearchData([FromBody] bindgrid1 searchdata)
         {
-            return objuser.SearchData(FromDate, ToDate, username, UserId);
+           return objuser.SearchData(searchdata);
         }
     }
 }
