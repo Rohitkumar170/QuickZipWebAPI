@@ -7,7 +7,6 @@ namespace QuickZipWebAPI.Models.DownloadMandate
 {
     public class DownloadMandateGridDetails
     {
-
         public Nullable<bool> IsExcelMandateDownload { get; set; }
         public Nullable<bool> IsSnapMandateDownload { get; set; }
         public Nullable<bool> IsMobileData { get; set; }
