@@ -747,6 +747,7 @@
     <Compile Include="Models\EntitySetup\BindCity.cs" />
     <Compile Include="Models\EntitySetup\BindCountry.cs" />
     <Compile Include="Models\EntitySetup\BindState.cs" />
+    <Compile Include="Models\EntitySetup\CommonClass.cs" />
     <Compile Include="Models\EntitySetup\EntityBusinessCode.cs" />
     <Compile Include="Models\EntitySetup\EntitySetupDataAccess.cs" />
     <Compile Include="Models\EntitySetup\MainGrid.cs" />
