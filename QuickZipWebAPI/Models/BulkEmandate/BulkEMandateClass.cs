@@ -26,6 +26,7 @@ namespace QuickZipWebAPI.Models.BulkEmandate
         {
             try
             {
+
                 var Data = Common.Getdata(dbcontext.MultipleResults("[dbo].[Sp_Mandate]").With<BulkEmandateAttribute>().With<BulkEmandateTabledatacount>().Execute("@QueryType", "@UserId", "@EntityId", "@topVal", "@ActivityType", "DataActivity", DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%"))), topVal, ActivityType));
                 //foreach (var dt in Data)
                 //{
@@ -35,6 +36,7 @@ namespace QuickZipWebAPI.Models.BulkEmandate
             }
             catch(Exception ex)
             {
+
                 throw ex;
             }
         }

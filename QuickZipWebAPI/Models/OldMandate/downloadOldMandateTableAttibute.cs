@@ -30,6 +30,7 @@ namespace QuickZipWebAPI.Models.OldMandate
         //public string ToDebit { get; set; }
 
 
+
         //public Boolean IsMobileData { get; set; }
         //public string createdon { get; set; }
         //public string IsScan { get; set; }
