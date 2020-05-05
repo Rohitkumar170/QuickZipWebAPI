@@ -53,6 +53,10 @@ namespace QuickZipWebAPI.Models.OldMandate
         //public string ToDebit { get; set; }
 
 
+        public string sponsorbankcode { get; set; }
+        public string name { get; set; }
+
+
         //internal IEnumerable<downloadOldMandateTableAttibute> GetAllDataByRefrence(string userId, string refrence1)
         //{
         //    throw new NotImplementedException();
