@@ -32,6 +32,8 @@ namespace QuickZipWebAPI.Models.OldEmandate
                 {
                    
                     dataList = employe.Cast<Searchdata>().ToList();
+
+
                 }
                 return dataList;
 

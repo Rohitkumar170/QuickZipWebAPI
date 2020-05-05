@@ -1,17 +1,21 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using QuickZipWebAPI.Models;
 using QuickZipWebAPI.Models.report_view;
+using QuickZipWebAPI.Models;
+using System.Threading.Tasks;
 
 namespace QuickZipWebAPI.Controllers
 {
     public class ReportViewController : ApiController
     {
-        report_view_DataAccess objuser = new report_view_DataAccess();
+       report_view_DataAccess objuser = new report_view_DataAccess();
+        
+       
 
         [HttpGet]
         [Route("api/ReportView/BindUser/{UserId}")]
