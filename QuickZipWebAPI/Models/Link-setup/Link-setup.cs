@@ -20,7 +20,6 @@ namespace QuickZipWebAPI.Models.Link_setup
 
             try
             {
-
                 var Result = Common.Getdata(dbcontext.MultipleResults("[dbo].[Sp_LinkSetup_AccessRights]").With<BindGrid>().Execute("@QueryType", "BindGridLinkItems"));
                 return Result;
             }
