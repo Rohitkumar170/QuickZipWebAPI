@@ -15,11 +15,11 @@ namespace QuickZipWebAPI.Controllers
     public class OldMandateController : ApiController
     {
         OldMandateClass oldmandcls = new OldMandateClass();
-       // downloadOldMandateTableAttibute downlodman = new downloadOldMandateTableAttibute();
+        //downloadOldMandateTableAttibute downlodman = new downloadOldMandateTableAttibute();
 
         [HttpGet]
         [Route("api/OldMandate/GetDataByUID/{UserId}")]
-        public IEnumerable<OldMandateAttribute> GetDataByUID(string UserId)
+        public IEnumerable<downloadOldMandateTableAttibute> GetDataByUID(string UserId)
         {
             return oldmandcls.GetUserBankData(UserId);
         }
