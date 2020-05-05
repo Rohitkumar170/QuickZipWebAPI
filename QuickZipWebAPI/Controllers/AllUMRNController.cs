@@ -7,7 +7,7 @@ using System.Web.Http;
 using QuickZipWebAPI.Models.Allumrn;
 using QuickZipWebAPI.Models;
 
-namespace QuickZip.Controllers
+namespace QuickZipWebAPI.Controllers
 {
     public class AllUMRNController : ApiController
     {
