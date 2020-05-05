@@ -1,12 +1,12 @@
-﻿using QuickZipWebAPI.Models.EntitySetup;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using QuickZipWebAPI.Models.EntitySetup;
 
-namespace QuickZipWebAPI.Controllers
+namespace QuickZip.Controllers
 {
     public class EntitySetupController : ApiController
     {
@@ -18,16 +18,32 @@ namespace QuickZipWebAPI.Controllers
             return ESDA.BindCountryAndBank();
         }
         [HttpGet]
-        [Route("api/BingGrid")]
+        [Route("api/BindGrid")]
         public Dictionary<string, object> BingGridApi()
         {
-            return ESDA.BingGridDataAccess();
+            return ESDA.BindGridDataAccess();
+        }
+        [HttpPost]
+        [Route("api/SaveData")]
+        public Dictionary<string, object> SaveDataApi([FromBody] AllFieldOfForm allFieldOfForm)
+        {
+            return ESDA.SaveDataDataAccess(allFieldOfForm);
+        }
+
+
+        [HttpGet]
+        [Route("api/BindState/{CountryId}")]
+        public Dictionary<string, object> BindStateApi(string CountryId)
+        {
+            return ESDA.BindStateDataAccess(CountryId);
         }
         [HttpGet]
-        [Route("api/SaveData")]
-        public Dictionary<string, object> SaveDataApi()
+        [Route("api/BindCity/{StateId}")]
+        public Dictionary<string, object> BindCityApi(string StateId)
         {
-            return ESDA.BingGridDataAccess();
+            return ESDA.BindCityDataAccess(StateId);
         }
+
+
     }
 }
