@@ -35,6 +35,7 @@ namespace QuickZipWebAPI.Models.BulkEmandate
             }
             catch(Exception ex)
             {
+
                 throw ex;
             }
         }
