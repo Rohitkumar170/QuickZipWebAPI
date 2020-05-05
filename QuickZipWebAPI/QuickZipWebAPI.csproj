@@ -738,6 +738,7 @@
     <Compile Include="Models\DownloadMandate\DownloadMandate.cs" />
     <Compile Include="Models\DownloadMandate\DownloadMandateDetails.cs" />
     <Compile Include="Models\DownloadMandate\DownloadMandateGridDetails.cs" />
+    <Compile Include="Models\EntityBankSetup\Adhocdata.cs" />
     <Compile Include="Models\EntityBankSetup\Bank.cs" />
     <Compile Include="Models\EntityBankSetup\Entity.cs" />
     <Compile Include="Models\EntityBankSetup\EntityBank.cs" />

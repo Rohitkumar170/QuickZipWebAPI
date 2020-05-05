@@ -17,7 +17,8 @@ namespace QuickZipWebAPI.Models.EntityBankSetup
     public class EntityBank
     {
         QuickCheckEmandate_AngularEntities dbcontext = new QuickCheckEmandate_AngularEntities();
-        List<EntityData> dataList = new List<EntityData>();
+        List<Adhocdata> dataList = new List<Adhocdata>();
+        List<EntityData> dataList1 = new List<EntityData>();
         public Dictionary<string, object> getEntity()
         {
             try
@@ -59,22 +60,22 @@ namespace QuickZipWebAPI.Models.EntityBankSetup
             }
         }
 
-        public IEnumerable<EntityData> SaveData(EntityData entity, string UserId, int fileformatxml, int fileformatexcel, int fileformatcsv, int FilesendDaily, int FilesendWeekly, int FilesendMonthly, int FilesendSpecific, string dtDate, string dtFileSequence)
+        public IEnumerable<Adhocdata> SaveData(Adhocdata adhocdata, string UserId, int fileformatxml, int fileformatexcel, int fileformatcsv, int FilesendDaily, int FilesendWeekly, int FilesendMonthly, int FilesendSpecific, string dtDate, string dtFileSequence)
         {
             try
             {
 
 
-                var Result = dbcontext.MultipleResults("[dbo].[Sp_EntityBankSetup]").With<EntityData>().Execute("@QueryType", "@dtFileSequence", "@EntityId", "@BankId"
+                var Result = dbcontext.MultipleResults("[dbo].[Sp_EntityBankSetup]").With<Adhocdata>().Execute("@QueryType", "@dtFileSequence", "@EntityId", "@BankId"
                 , "@fileformatxml", "@fileformatexcel", "@fileformatcsv", "@FilesendDaily",
          "@FilesendWeekly", "@FilesendMonthly", "@FilesendSpecific", "@TimeDuration", "@dtDate", "@UserId", "SaveData"
-                       , dtFileSequence, entity.ddlentity.ToString(), entity.ddlbank.ToString(), fileformatxml.ToString(), fileformatexcel.ToString(), fileformatcsv.ToString(), FilesendDaily.ToString(),
-             FilesendWeekly.ToString(), FilesendMonthly.ToString(), FilesendSpecific.ToString(), entity.presentmenttime, dtDate, DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))));
+                       , dtFileSequence, adhocdata.ddlentity.ToString(), adhocdata.ddlbank.ToString(), fileformatxml.ToString(), fileformatexcel.ToString(), fileformatcsv.ToString(), FilesendDaily.ToString(),
+             FilesendWeekly.ToString(), FilesendMonthly.ToString(), FilesendSpecific.ToString(), adhocdata.presentmenttime, dtDate, DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))));
 
                 foreach (var entitydata in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();
-                    dataList = entitydata.Cast<EntityData>().ToList();
+                    dataList = entitydata.Cast<Adhocdata>().ToList();
                 }
                 return dataList;
 
@@ -84,24 +85,25 @@ namespace QuickZipWebAPI.Models.EntityBankSetup
                 throw ex;
             }
         }
-        public IEnumerable<EntityData> UpdateData(EntityData entity, string UserId, int fileformatxml, int fileformatexcel, int fileformatcsv, int FilesendDaily, int FilesendWeekly, int FilesendMonthly, int FilesendSpecific, string dtDate, string dtFileSequence, int Id)
+        public IEnumerable<Adhocdata> UpdateData(Adhocdata adhocdata, string UserId, int fileformatxml, int fileformatexcel, int fileformatcsv, int FilesendDaily, int FilesendWeekly, int FilesendMonthly, int FilesendSpecific, string dtDate, string dtFileSequence, int Id)
         {
             try
             {
 
 
-                var Result = dbcontext.MultipleResults("[dbo].[Sp_EntityBankSetup]").With<EntityData>().Execute("@QueryType", "@dtFileSequence", "@EntityId", "@BankId"
+                var Result = dbcontext.MultipleResults("[dbo].[Sp_EntityBankSetup]").With<Adhocdata>().Execute("@QueryType", "@dtFileSequence", "@EntityId", "@BankId"
                 , "@fileformatxml", "@fileformatexcel", "@fileformatcsv", "@FilesendDaily",
          "@FilesendWeekly", "@FilesendMonthly", "@FilesendSpecific", "@TimeDuration", "@dtDate", "@EntityBankId", "@UserId", "UpdateData"
-                       , dtFileSequence, entity.ddlentity.ToString(), entity.ddlbank.ToString(), fileformatxml.ToString(), fileformatexcel.ToString(), fileformatcsv.ToString(), FilesendDaily.ToString(),
-             FilesendWeekly.ToString(), FilesendMonthly.ToString(), FilesendSpecific.ToString(), entity.presentmenttime, dtDate, Id.ToString(), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))));
+                       , dtFileSequence, adhocdata.ddlentity.ToString(), adhocdata.ddlbank.ToString(), fileformatxml.ToString(), fileformatexcel.ToString(), fileformatcsv.ToString(), FilesendDaily.ToString(),
+             FilesendWeekly.ToString(), FilesendMonthly.ToString(), FilesendSpecific.ToString(), adhocdata.presentmenttime, dtDate, Id.ToString(), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))));
 
                 foreach (var entitydata in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();
-                    dataList = entitydata.Cast<EntityData>().ToList();
+                    dataList = entitydata.Cast<Adhocdata>().ToList();
                 }
-                return dataList;
+                 return dataList;
+                
 
             }
             catch (Exception ex)

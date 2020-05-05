@@ -41,8 +41,8 @@ namespace QuickZipWebAPI.Controllers
         }
 
         [HttpPost]
-        [Route("api/EntityBank/SaveData/{UserId}/{arrvalue}/{adhocarr}")]
-        public IEnumerable<EntityData> SaveData([FromBody] EntityData entity, string UserId, string arrvalue, string adhocarr)
+        [Route("api/EntityBank/SaveData")]
+        public IEnumerable<Adhocdata>SaveData([FromBody] Adhocdata adhocdata)
         {
             int fileformatxml = 0;
             int fileformatexcel = 0;
@@ -52,7 +52,7 @@ namespace QuickZipWebAPI.Controllers
             var FilesendMonthly = 0;
             var FilesendSpecific = 0;
 
-            if (entity.chkxml == true)
+            if (adhocdata.chkxml== true)
             {
                 fileformatxml = 1;
             }
@@ -61,7 +61,7 @@ namespace QuickZipWebAPI.Controllers
                 fileformatxml = 0;
             }
 
-            if (entity.chkexcel == true)
+            if (adhocdata.chkexcel == true)
             {
                 fileformatexcel = 1;
             }
@@ -70,7 +70,7 @@ namespace QuickZipWebAPI.Controllers
                 fileformatexcel = 0;
             }
 
-            if (entity.chkcsv == true)
+            if (adhocdata.chkcsv == true)
             {
                 fileformatcsv = 1;
             }
@@ -79,26 +79,26 @@ namespace QuickZipWebAPI.Controllers
                 fileformatcsv = 0;
             }
 
-            if (entity.rdoDate == "D")
+            if (adhocdata.rdoDate == "D")
             {
                 FilesendDaily = 1;
             }
-            else if (entity.rdoDate == "W")
+            else if (adhocdata.rdoDate == "W")
             {
                 FilesendWeekly = 1;
             }
-            else if (entity.rdoDate == "M")
+            else if (adhocdata.rdoDate == "M")
             {
                 FilesendMonthly = 1;
             }
-            else if (entity.rdoDate == "A")
+            else if (adhocdata.rdoDate == "A")
             {
                 FilesendSpecific = 1;
             }
 
             string dtDate = "<dtXml>";
             string dtFileSequence = "<dtXml>";
-            string date = entity.rdoDate;
+            string date = adhocdata.rdoDate;
             string DailyTime = "";
             string MonthlyDate = "";
             string WeeklyDate = "";
@@ -107,7 +107,7 @@ namespace QuickZipWebAPI.Controllers
 
             if (date == "D")
             {
-                DailyTime = entity.txtdatepicker;
+                DailyTime = adhocdata.txtdatepicker;
                 if (DailyTime == "")
                 {
 
@@ -124,14 +124,14 @@ namespace QuickZipWebAPI.Controllers
 
             else if (date == "M")
             {
-                if (entity.txtdatepicker2 == "")
+                if (adhocdata.txtdatepicker2 == "")
                 { }
-                else if (entity.txtdatepicker4 == "")
+                else if (adhocdata.txtdatepicker4 == "")
                 { }
                 else
                 {
 
-                    MonthlyDate = ((entity.txtdatepicker2) + '_' + (entity.txtdatepicker4));
+                    MonthlyDate = ((adhocdata.txtdatepicker2) + '_' + (adhocdata.txtdatepicker4));
                     dtDate += "<dtXml ";
                     dtDate += " MonthlyDate = " + @"""" + MonthlyDate + @"""";
                     dtDate += " />";
@@ -139,13 +139,13 @@ namespace QuickZipWebAPI.Controllers
             }
             else if (date == "W")
             {
-                if (entity.ddlday == 0)
+                if (adhocdata.ddlday == 0)
                 { }
-                else if (entity.txtdatepicker1 == "")
+                else if (adhocdata.txtdatepicker1 == "")
                 { }
                 else
                 {
-                    WeeklyDate = ((entity.ddlday) + '_' + (entity.txtdatepicker1));
+                    WeeklyDate = ((adhocdata.ddlday) + '_' + (adhocdata.txtdatepicker1));
                     dtDate += "<dtXml ";
                     dtDate += " WeeklyDate = " + @"""" + WeeklyDate + @"""";
                     dtDate += " />";
@@ -154,17 +154,14 @@ namespace QuickZipWebAPI.Controllers
 
             else if (date == "A")
             {
-                if (adhocarr != "" || adhocarr != "0")
-                {
-                    string[] adhocarr1 = adhocarr.Split(',');
-                    var AdValue = "";
+               
 
-                    for (var i = 0; i < adhocarr1.Length; i++)
+                var AdValue = "";
+
+                    for (var i = 0; i < adhocdata.adhocarr.Count; i++)
                     {
 
-
-
-                        AdValue = AdValue + adhocarr1[i] + ',';
+                        AdValue = AdValue + adhocdata.adhocarr[i] + ',';
 
 
                     }
@@ -174,24 +171,23 @@ namespace QuickZipWebAPI.Controllers
 
                     dtDate += " Adhocs = " + @"""" + AdValue + @"""";
                     dtDate += " />";
-                }
+                
 
             }
             dtDate += "</dtXml>";
 
-            string[] arrvalue1 = arrvalue.Split(',');
-
+           
             dtFileSequence += "<dtXml ";
 
-            for (var i = 0; i < arrvalue1.Length; i++)
+            for (var i = 0; i < adhocdata.arrsequence.Count; i++)
             {
 
-                dtFileSequence += " SEQ" + PositionCount + " = " + @"""" + arrvalue1[i] + @"""";
+                dtFileSequence += " SEQ" + PositionCount + " = " + @"""" + adhocdata.arrsequence[i] + @"""";
                 PositionCount++;
             }
 
-            dtFileSequence += " TotalLength=" + @"""" + entity.txttotalcount + @"""";
-            dtFileSequence += " EntityId = " + @"""" + entity.ddlentity + @"""";
+            dtFileSequence += " TotalLength=" + @"""" + adhocdata.txttotalcount + @"""";
+            dtFileSequence += " EntityId = " + @"""" + adhocdata.ddlentity + @"""";
             dtFileSequence += " />";
             dtFileSequence += "</dtXml>";
 
@@ -199,14 +195,14 @@ namespace QuickZipWebAPI.Controllers
 
 
 
-            return objuser.SaveData(entity, UserId, fileformatxml, fileformatexcel, fileformatcsv, FilesendDaily, FilesendWeekly, FilesendMonthly, FilesendSpecific, dtDate, dtFileSequence);
+            return objuser.SaveData(adhocdata,adhocdata.UserId, fileformatxml, fileformatexcel, fileformatcsv, FilesendDaily, FilesendWeekly, FilesendMonthly, FilesendSpecific, dtDate, dtFileSequence);
 
 
         }
 
         [HttpPost]
-        [Route("api/EntityBank/UpdateData/{UserId}/{arrvalue}/{adhocarr}/{Id}")]
-        public IEnumerable<EntityData> UpdateData([FromBody] EntityData entity, string UserId, string arrvalue, string adhocarr, int Id)
+        [Route("api/EntityBank/UpdateData/{Id}")]
+        public IEnumerable<Adhocdata> UpdateData([FromBody] Adhocdata adhocdata, int Id)
         {
             int fileformatxml = 0;
             int fileformatexcel = 0;
@@ -216,7 +212,7 @@ namespace QuickZipWebAPI.Controllers
             var FilesendMonthly = 0;
             var FilesendSpecific = 0;
 
-            if (entity.chkxml == true)
+            if (adhocdata.chkxml == true)
             {
                 fileformatxml = 1;
             }
@@ -225,7 +221,7 @@ namespace QuickZipWebAPI.Controllers
                 fileformatxml = 0;
             }
 
-            if (entity.chkexcel == true)
+            if (adhocdata.chkexcel == true)
             {
                 fileformatexcel = 1;
             }
@@ -234,7 +230,7 @@ namespace QuickZipWebAPI.Controllers
                 fileformatexcel = 0;
             }
 
-            if (entity.chkcsv == true)
+            if (adhocdata.chkcsv == true)
             {
                 fileformatcsv = 1;
             }
@@ -243,26 +239,26 @@ namespace QuickZipWebAPI.Controllers
                 fileformatcsv = 0;
             }
 
-            if (entity.rdoDate == "D")
+            if (adhocdata.rdoDate == "D")
             {
                 FilesendDaily = 1;
             }
-            else if (entity.rdoDate == "W")
+            else if (adhocdata.rdoDate == "W")
             {
                 FilesendWeekly = 1;
             }
-            else if (entity.rdoDate == "M")
+            else if (adhocdata.rdoDate == "M")
             {
                 FilesendMonthly = 1;
             }
-            else if (entity.rdoDate == "A")
+            else if (adhocdata.rdoDate == "A")
             {
                 FilesendSpecific = 1;
             }
 
             string dtDate = "<dtXml>";
             string dtFileSequence = "<dtXml>";
-            string date = entity.rdoDate;
+            string date = adhocdata.rdoDate;
             string DailyTime = "";
             string MonthlyDate = "";
             string WeeklyDate = "";
@@ -271,7 +267,7 @@ namespace QuickZipWebAPI.Controllers
 
             if (date == "D")
             {
-                DailyTime = entity.txtdatepicker;
+                DailyTime = adhocdata.txtdatepicker;
                 if (DailyTime == "")
                 {
 
@@ -288,14 +284,14 @@ namespace QuickZipWebAPI.Controllers
 
             else if (date == "M")
             {
-                if (entity.txtdatepicker2 == "")
+                if (adhocdata.txtdatepicker2 == "")
                 { }
-                else if (entity.txtdatepicker4 == "")
+                else if (adhocdata.txtdatepicker4 == "")
                 { }
                 else
                 {
 
-                    MonthlyDate = ((entity.txtdatepicker2) + "_" + (entity.txtdatepicker4));
+                    MonthlyDate = ((adhocdata.txtdatepicker2) + "_" + (adhocdata.txtdatepicker4));
                     dtDate += "<dtXml ";
                     dtDate += " MonthlyDate = " + @"""" + MonthlyDate + @"""";
                     dtDate += " />";
@@ -303,13 +299,13 @@ namespace QuickZipWebAPI.Controllers
             }
             else if (date == "W")
             {
-                if (entity.ddlday == 0)
+                if (adhocdata.ddlday == 0)
                 { }
-                else if (entity.txtdatepicker1 == "")
+                else if (adhocdata.txtdatepicker1 == "")
                 { }
                 else
                 {
-                    WeeklyDate = ((entity.ddlday) + "_" + (entity.txtdatepicker1));
+                    WeeklyDate = ((adhocdata.ddlday) + "_" + (adhocdata.txtdatepicker1));
                     dtDate += "<dtXml ";
                     dtDate += " WeeklyDate = " + @"""" + WeeklyDate + @"""";
                     dtDate += " />";
@@ -318,53 +314,44 @@ namespace QuickZipWebAPI.Controllers
 
             else if (date == "A")
             {
-                if (adhocarr != "" || adhocarr != "0")
+
+                var AdValue = "";
+
+                for (var i = 0; i < adhocdata.adhocarr.Count; i++)
                 {
-                    string[] adhocarr1 = adhocarr.Split(',');
-                    var AdValue = "";
 
-                    for (var i = 0; i < adhocarr1.Length; i++)
-                    {
+                    AdValue = AdValue + adhocdata.adhocarr[i] + ',';
 
-
-
-                        AdValue = AdValue + adhocarr1[i] + ',';
-
-
-                    }
-
-                    AdValue = AdValue.TrimEnd(',');
-                    dtDate += "<dtXml ";
-
-                    dtDate += " Adhocs = " + @"""" + AdValue + @"""";
-                    dtDate += " />";
 
                 }
+
+                AdValue = AdValue.TrimEnd(',');
+                dtDate += "<dtXml ";
+
+                dtDate += " Adhocs = " + @"""" + AdValue + @"""";
+                dtDate += " />";
 
             }
             dtDate += "</dtXml>";
 
-            string[] arrvalue1 = arrvalue.Split(',');
-
             dtFileSequence += "<dtXml ";
 
-            for (var i = 0; i < arrvalue1.Length; i++)
+            for (var i = 0; i < adhocdata.arrsequence.Count; i++)
             {
 
-                dtFileSequence += " SEQ" + PositionCount + " = " + @"""" + arrvalue1[i] + @"""";
+                dtFileSequence += " SEQ" + PositionCount + " = " + @"""" + adhocdata.arrsequence[i] + @"""";
                 PositionCount++;
             }
 
-            dtFileSequence += " TotalLength=" + @"""" + entity.txttotalcount + @"""";
-            dtFileSequence += " EntityId = " + @"""" + entity.ddlentity + @"""";
+            dtFileSequence += " TotalLength=" + @"""" + adhocdata.txttotalcount + @"""";
+            dtFileSequence += " EntityId = " + @"""" + adhocdata.ddlentity + @"""";
             dtFileSequence += " />";
             dtFileSequence += "</dtXml>";
 
 
 
 
-
-            return objuser.UpdateData(entity, UserId, fileformatxml, fileformatexcel, fileformatcsv, FilesendDaily, FilesendWeekly, FilesendMonthly, FilesendSpecific, dtDate, dtFileSequence, Id);
+            return objuser.UpdateData(adhocdata, adhocdata.UserId, fileformatxml, fileformatexcel, fileformatcsv, FilesendDaily, FilesendWeekly, FilesendMonthly, FilesendSpecific, dtDate, dtFileSequence, Id);
 
 
         }
