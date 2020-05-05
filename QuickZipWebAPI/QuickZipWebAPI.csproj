@@ -49,7 +49,7 @@
       <HintPath>..\BusinessLibrary\bin\Debug\BusinessLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Encryption">
-      <HintPath>..\..\..\garima\DLL\Encryption.dll</HintPath>
+      <HintPath>..\..\..\Vimal\DLL\Encryption.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -57,13 +57,14 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="ExcelDataReader">
-      <HintPath>C:\Users\AIY-005\Desktop\ExcelDataReader.dll</HintPath>
+    <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
@@ -180,19 +181,14 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AllUMRNController.cs" />
     <Compile Include="Controllers\BankFormController.cs" />
-    <Compile Include="Controllers\BulkEMandateController.cs" />
     <Compile Include="Controllers\DownloadEmandateController.cs" />
     <Compile Include="Controllers\DownloadMandateController.cs" />
     <Compile Include="Controllers\DownloadoldemandateController.cs" />
-    <Compile Include="Controllers\EntityBankController.cs" />
-    <Compile Include="Controllers\EntitySetupController.cs" />
     <Compile Include="Controllers\HistoricalMandateController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LinkSetupController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\NachtransactionPresentationController.cs" />
     <Compile Include="Controllers\OldMandateController.cs" />
-    <Compile Include="Controllers\ReportViewController.cs" />
     <Compile Include="Controllers\UMRNHistoryController.cs" />
     <Compile Include="Controllers\UMRNUploadController.cs" />
     <Compile Include="Controllers\USerController.cs" />
@@ -712,8 +708,6 @@
     </Compile>
     <Compile Include="Models\Allumrn\Allumrnaccesslayer.cs" />
     <Compile Include="Models\Allumrn\GridData.cs" />
-    <Compile Include="Models\Allumrn\GridDataDetails.cs" />
-    <Compile Include="Models\Allumrn\Insertumrn.cs" />
     <Compile Include="Models\BankForm\BankFormData.cs" />
     <Compile Include="Models\BankForm\BindBankNameDetails.cs" />
     <Compile Include="Models\BankForm\BindBankPaymentMode.cs" />
@@ -725,12 +719,12 @@
     <Compile Include="Models\BankForm\BindEntityDetailsdata.cs" />
     <Compile Include="Models\BankForm\BindEntityPeriods.cs" />
     <Compile Include="Models\BankForm\Bindfrequency.cs" />
+    <Compile Include="Models\BankForm\BindGrid.cs" />
     <Compile Include="Models\BankForm\BindLogincheck.cs" />
     <Compile Include="Models\BankForm\BindLogoImageDetails.cs" />
     <Compile Include="Models\BankForm\BindSponserCode.cs" />
-    <Compile Include="Models\BulkEmandate\BulkEmandateAttribute.cs" />
-    <Compile Include="Models\BulkEmandate\BulkEMandateClass.cs" />
-    <Compile Include="Models\BulkEmandate\BulkEmandateTabledatacount.cs" />
+    <Compile Include="Models\BankForm\CheckReference.cs" />
+    <Compile Include="Models\BankForm\SaveData.cs" />
     <Compile Include="Models\CommonFlag.cs" />
     <Compile Include="Models\DownloadEmandate\DownloadEmandateaccesslayer.cs" />
     <Compile Include="Models\DownloadEmandate\Downloademandatebank.cs" />
@@ -738,20 +732,6 @@
     <Compile Include="Models\DownloadMandate\DownloadMandate.cs" />
     <Compile Include="Models\DownloadMandate\DownloadMandateDetails.cs" />
     <Compile Include="Models\DownloadMandate\DownloadMandateGridDetails.cs" />
-    <Compile Include="Models\EntityBankSetup\Adhocdata.cs" />
-    <Compile Include="Models\EntityBankSetup\Bank.cs" />
-    <Compile Include="Models\EntityBankSetup\Entity.cs" />
-    <Compile Include="Models\EntityBankSetup\EntityBank.cs" />
-    <Compile Include="Models\EntityBankSetup\EntityData.cs" />
-    <Compile Include="Models\EntityBankSetup\Table1.cs" />
-    <Compile Include="Models\EntityBankSetup\Table2.cs" />
-    <Compile Include="Models\EntityBankSetup\Table3.cs" />
-    <Compile Include="Models\EntitySetup\AllFieldOfForm.cs" />
-    <Compile Include="Models\EntitySetup\BindBank.cs" />
-    <Compile Include="Models\EntitySetup\BindCountry.cs" />
-    <Compile Include="Models\EntitySetup\EntityBusinessCode.cs" />
-    <Compile Include="Models\EntitySetup\EntitySetupDataAccess.cs" />
-    <Compile Include="Models\EntitySetup\MainGrid.cs" />
     <Compile Include="Models\ForgotPassword\Forgotflag.cs" />
     <Compile Include="Models\ForgotPassword\UserDetails.cs" />
     <Compile Include="Models\ForgotPassword\Value.cs" />
@@ -763,25 +743,12 @@
     <Compile Include="Models\Login\Login.cs" />
     <Compile Include="Models\Login\Logindetails.cs" />
     <Compile Include="Models\Login\SaveLoginSessionTrxn.cs" />
-    <Compile Include="Models\nachtransactionpresentation\NachTransactionBindRef.cs" />
-    <Compile Include="Models\nachtransactionpresentation\NachTransactionBindRefOnChange.cs" />
-    <Compile Include="Models\nachtransactionpresentation\NachTransactionBindRow.cs" />
-    <Compile Include="Models\nachtransactionpresentation\NachTransactionBindUMRN.cs" />
-    <Compile Include="Models\nachtransactionpresentation\NachTransactionCheckUser.cs" />
-    <Compile Include="Models\nachtransactionpresentation\NachTransactionMainGrid.cs" />
-    <Compile Include="Models\nachtransactionpresentation\nachtransactionpresentation.cs" />
-    <Compile Include="Models\nachtransactionpresentation\nachtransactionpresentationaccesslayer.cs" />
-    <Compile Include="Models\nachtransactionpresentation\NachTransactionPrsentationBindForm.cs" />
-    <Compile Include="Models\nachtransactionpresentation\NachTransactionUMRNOnChange.cs" />
     <Compile Include="Models\OldEmandate\BankBind.cs" />
     <Compile Include="Models\OldEmandate\Downloadoldemandateaccesslayer.cs" />
     <Compile Include="Models\OldEmandate\Searchdata.cs" />
     <Compile Include="Models\OldMandate\downloadOldMandateTableAttibute.cs" />
     <Compile Include="Models\OldMandate\OldMandateAttribute.cs" />
     <Compile Include="Models\OldMandate\OldMandateClass.cs" />
-    <Compile Include="Models\report-view\bindgrid.cs" />
-    <Compile Include="Models\report-view\BindUser.cs" />
-    <Compile Include="Models\report-view\report_view_DataAccess.cs" />
     <Compile Include="Models\UMRNUpload\GridSuccess.cs" />
     <Compile Include="Models\UMRNUpload\GridUnsuccess.cs" />
     <Compile Include="Models\UMRNUpload\MainGrid.cs" />
