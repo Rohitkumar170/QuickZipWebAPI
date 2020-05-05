@@ -27,11 +27,11 @@ namespace QuickZipWebAPI.Models.Login
         public Nullable<bool> IsActive { get; set; }
         public Nullable<bool> IsDeleted { get; set; }
         public Nullable<bool> IsLoginFirstTime { get; set; }
-        public DateTime LastLogin { get; set; }
+        public Nullable<DateTime> LastLogin { get; set; }
         public Nullable<Int64> UpdatedBy { get; set; }
-        public DateTime UpdatedOn { get; set; }
+        public Nullable<DateTime> UpdatedOn { get; set; }
         public Nullable<Int64> CreatedBy { get; set; }
-        public DateTime CreatedOn { get; set; }
+        public Nullable<DateTime> CreatedOn { get; set; }
         public Nullable<int> BranchId { get; set; }
         public Nullable<bool> IsDefaultPswdChange { get; set; }
         public Nullable<bool> IsPhysical { get; set; }
