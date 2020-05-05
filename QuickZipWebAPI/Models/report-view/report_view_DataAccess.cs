@@ -5,11 +5,9 @@ using System.Web;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
-using QuickZipWebAPI.Models.report_view;
 using BusinessLibrary;
 using QuickZipWebAPI.Entity;
 using System.Threading.Tasks;
-
 
 
 
