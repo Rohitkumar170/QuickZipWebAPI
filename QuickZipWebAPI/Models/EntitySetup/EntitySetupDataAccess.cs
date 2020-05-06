@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Web;
+using QuickZipWebAPI.Models.EntitySetup;
 
 
 namespace QuickZipWebAPI.Models.EntitySetup
@@ -38,7 +39,38 @@ namespace QuickZipWebAPI.Models.EntitySetup
                 throw ex;
             }
         }
-        public Dictionary<string, object> SaveDataDataAccess(AllFieldOfForm allFieldOfForm)
+
+        public Dictionary<string, object> DeleteDataDataAccess(MainGrid MainGrid,string EntityId)
+        {
+            string[] authorsList = MainGrid.Code.Split(new char[] { ',' });
+            string XmlEntity = "<dtXml>";
+            for (int i=0; i< authorsList.Length-1; i++)
+            {
+                XmlEntity += "<dtXml ";
+                XmlEntity += " dtEntityId=" + @"""" + Convert.ToInt64(authorsList[i]) +  @"""";
+                XmlEntity += " />";
+    }
+            XmlEntity += "</dtXml>";
+            try
+            {
+                var Result = Common.Getdata(dbcontext.MultipleResults("[dbo].[Sp_Entity]").With<MainGrid>().Execute("@QueryType","@XmlEntity" ,"DeleteEntityXml", XmlEntity));
+                return Result;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
+
+
+
+
+
+        public Dictionary<string, object> SaveDataDataAccess(AllFieldOfForm allFieldOfForm, string EntityId)
         {
             try
             {
@@ -217,12 +249,6 @@ namespace QuickZipWebAPI.Models.EntitySetup
                 {
                     ISEnableCancelUser = "0";
                 }
-
-                dtBankCode = "<dtXml></dtXml>";
-                XmlFileName = "<dtXml></dtXml>";
-                dtBankAmount = "<dtXml></dtXml>";
-                dtEntityCode = "<dtXml></dtXml>";
-                EntityBCode = "<dtXml></dtXml>";
 
                 var data = "To"; var NEWDATA = "Untill Cancelled";
                 XmlType = "<dtXml>";
@@ -436,16 +462,243 @@ namespace QuickZipWebAPI.Models.EntitySetup
                 }
                 dtPaymentMode += "</dtXml>";
                 ///////////////////////////////////////////////////////////////
-                XmlModeType = "<dtXml></dtXml>";
-                //XmlModeType += "<dtXml ";
-                //if (allFieldOfForm.IsPhysicalMandateCh == true)
-                //{
-                //    XmlModeType += "Physical=" + @"""" + 1 + @"""";
-                //}
+                XmlModeType = "<dtXml>";
+                XmlModeType += "<dtXml ";
+                if (allFieldOfForm.IsPhysicalMandateCh == true)
+                {
+                    XmlModeType += " Physical=" + @"""" + 1 + @"""";
+
+                    if (allFieldOfForm.ValidationByCustomer_Ch == true)
+                    {
+                        XmlModeType += " customer=" + @"""" + 1 + @"""";
+                    }
+                    else
+                    {
+                        XmlModeType += " customer=" + @"""" + 0 + @"""";
+                    }
+                    if (allFieldOfForm.ValidationByCorporate_Ch == true)
+                    {
+                        XmlModeType += " cooperate=" + @"""" + 1 + @"""";
+                    }
+                    else
+                    {
+                        XmlModeType += " cooperate=" + @"""" + 0 + @"""";
+                    }
+                    if (allFieldOfForm.OCRCode_Ch == true)
+                    {
+                        XmlModeType += " ocr=" + @"""" + 1 + @"""";
+                    }
+                    else
+                    {
+                        XmlModeType += " ocr=" + @"""" + 0 + @"""";
+                    }
+                }
+                else
+                {
+                    XmlModeType += " Physical=" + @"""" + 0 + @"""";
+                    XmlModeType += " customer=" + @"""" + 0 + @"""";
+                    XmlModeType += " cooperate=" + @"""" + 0 + @"""";
+                    XmlModeType += " ocr=" + @"""" + 0 + @"""";
+                }
+                if (allFieldOfForm.QRCode_Ch == true)
+                {
+                    XmlModeType += " Qr=" + @"""" + 1 + @"""";
+                }
+                else
+                {
+                    XmlModeType += " Qr=" + @"""" + 0 + @"""";
+                }
+                if (allFieldOfForm.Logo_Ch == true)
+                {
+                    XmlModeType += " logo=" + @"""" + 1 + @"""";
+                }
+                else
+                {
+                    XmlModeType += " logo=" + @"""" + 0 + @"""";
+                }
+                if (allFieldOfForm.PhoneNumber_ch == true)
+                {
+                    XmlModeType += " CustomerphNumber=" + @"""" + 1 + @"""";
+                }
+                else
+                {
+                    XmlModeType += " CustomerphNumber=" + @"""" + 0 + @"""";
+                }
+                if (allFieldOfForm.E_mailID_Ch == true)
+                {
+                    XmlModeType += " Customeremailid=" + @"""" + 1 + @"""";
+                }
+                else
+                {
+                    XmlModeType += " Customeremailid=" + @"""" + 0 + @"""";
+                }
+                if (allFieldOfForm.IsEMandate == true)
+                {
+                    XmlModeType += " emandate=" + @"""" + 1 + @"""";
+
+                    if (allFieldOfForm.NetBankingCh == true)
+                    {
+                        XmlModeType += " netbanking=" + @"""" + 1 + @"""";
+                    }
+                    else
+                    {
+                        XmlModeType += " netbanking=" + @"""" + 0 + @"""";
+                    }
+                    if (allFieldOfForm.DebitCardCh == true)
+                    {
+                        XmlModeType += " debit=" + @"""" + 1 + @"""";
+                    }
+                    else
+                    {
+                        XmlModeType += " debit=" + @"""" + 0 + @"""";
+                    }
+                    if (allFieldOfForm.AadhaarCardCh == true)
+                    {
+                        XmlModeType += " aadhar=" + @"""" + 1 + @"""";
+                    }
+                    else
+                    {
+                        XmlModeType += " aadhar=" + @"""" + 0 + @"""";
+                    }
+                }
+                else
+                {
+                    XmlModeType += " emandate=" + @"""" + 0 + @"""";
+                }
+
+                if (allFieldOfForm.NetBankingCh == true)
+                {
+                    if (allFieldOfForm.ValidateThroughEmail_Ch == true)
+                    {
+                        XmlModeType += " mail=" + @"""" + 1 + @"""";
+                    }
+                    else
+                    {
+                        XmlModeType += " mail=" + @"""" + 0 + @"""";
+                    }
+                    if (allFieldOfForm.Manual_Ch == true)
+                    {
+                        XmlModeType += " netmanual=" + @"""" + 1 + @"""";
+                    }
+                    else
+                    {
+                        XmlModeType += " netmanual=" + @"""" + 0 + @"""";
+                    }
+                    if (allFieldOfForm.SMS_Ch == true)
+                    {
+                        XmlModeType += " sms=" + @"""" + 1 + @"""";
+                    }
+                    else
+                    {
+                        XmlModeType += " sms=" + @"""" + 0 + @"""";
+                    }
+                }
+                else
+                {
+                    XmlModeType += " mail=" + @"""" + 0 + @"""";
+                    XmlModeType += " netmanual=" + @"""" + 0 + @"""";
+                    XmlModeType += " sms=" + @"""" + 0 + @"""";
+                }
+
+                if (allFieldOfForm.DebitCardCh == true)
+                {
+                    if (allFieldOfForm.DebitValidateThroughEmail == true)
+                    {
+                        XmlModeType += " debitmail=" + @"""" + 1 + @"""";
+                    }
+                    else
+                    {
+                        XmlModeType += " debitmail=" + @"""" + 0 + @"""";
+                    }
+                    if (allFieldOfForm.DebitManual == true)
+                    {
+                        XmlModeType += " debitmanual=" + @"""" + 1 + @"""";
+                    }
+                    else
+                    {
+                        XmlModeType += " debitmanual=" + @"""" + 0 + @"""";
+                    }
+                    if (allFieldOfForm.DebitSMS == true)
+                    {
+                        XmlModeType += " debitsms=" + @"""" + 1 + @"""";
+                    }
+                    else
+                    {
+                        XmlModeType += " debitsms=" + @"""" + 0 + @"""";
+                    }
+                }
+                else
+                {
+                    XmlModeType += " debitmail=" + @"""" + 0 + @"""";
+                    XmlModeType += " debitmanual=" + @"""" + 0 + @"""";
+                    XmlModeType += " debitsms=" + @"""" + 0 + @"""";
+                }
+
+                if (allFieldOfForm.AadhaarCardCh == true)
+                {
+                    if (allFieldOfForm.AadhaarValidateThroughEmail == true)
+                    {
+                        XmlModeType += " aadharmail=" + @"""" + 1 + @"""";
+                    }
+                    else
+                    {
+                        XmlModeType += " aadharmail=" + @"""" + 0 + @"""";
+                    }
+                    if (allFieldOfForm.AadhaarManual == true)
+                    {
+                        XmlModeType += " aadharmanual=" + @"""" + 1 + @"""";
+                    }
+                    else
+                    {
+                        XmlModeType += " aadharmanual=" + @"""" + 0 + @"""";
+                    }
+                    if (allFieldOfForm.AadhaarSMS == true)
+                    {
+                        XmlModeType += " aadharsms=" + @"""" + 1 + @"""";
+                    }
+                    else
+                    {
+                        XmlModeType += " aadharsms=" + @"""" + 0 + @"""";
+                    }
+                }
+                else
+                {
+                    XmlModeType += " aadharmail=" + @"""" + 0 + @"""";
+                    XmlModeType += " aadharmanual=" + @"""" + 0 + @"""";
+                    XmlModeType += " aadharsms=" + @"""" + 0 + @"""";
+                }
+
+                if (allFieldOfForm.Accountvalidation_Ch == true)
+                {
+                    XmlModeType += " accountvalidation=" + @"""" + 1 + @"""";
+                }
+                else
+                {
+                    XmlModeType += " accountvalidation=" + @"""" + 0 + @"""";
+                }
+
+                if (allFieldOfForm.Presentment_Ch == true)
+                {
+                    XmlModeType += " Presentment=" + @"""" + 1 + @"""";
+                }
+                else
+                {
+                    XmlModeType += " Presentment=" + @"""" + 0 + @"""";
+                }
+
+                XmlModeType += " />";
+                XmlModeType += "</dtXml>";
+
+
+
+
 
                 dtBankAmount = "<dtXml></dtXml>";
-
-
+                dtBankCode = "<dtXml></dtXml>";
+                XmlFileName = "<dtXml></dtXml>";
+                dtBankAmount = "<dtXml></dtXml>";
+                dtEntityCode = "<dtXml></dtXml>";
+                EntityBCode = "<dtXml></dtXml>";
 
 
 
@@ -464,11 +717,11 @@ namespace QuickZipWebAPI.Models.EntitySetup
                 //    UserId = "0";
                 //}
 
-                //if (EntityId.Trim() == "")
+                if (EntityId.Trim() == "N")
 
-                //{
+                {
 
-                var Result = Common.Getdata(dbcontext.MultipleResults("[dbo].[Sp_Entity]").With<CommonClass>().With<CommonClass>().Execute(
+                    var Result = Common.Getdata(dbcontext.MultipleResults("[dbo].[Sp_Entity]").With<CommonClass>().With<CommonClass>().Execute(
                     "@QueryType", "@InstructingMemberId", "@XmlSponsorBankCode", "@Type", "@Code", "@Name", "@ContactPerson",
                 "@SponsorBankCode", "@UtilityCode", "@SponsorBankName", "@UserId", "@Addr1", "@Email", "@CountryId", "@CityId", "@StateId",
                         "@Mobile", "@Pincode", "@ImagePath", "@UserName", "@password", "@passwordKey"
@@ -494,9 +747,38 @@ namespace QuickZipWebAPI.Models.EntitySetup
                        allFieldOfForm.AppID, XmlFileName, allFieldOfForm.AccountNumber, recheckthepresentmentfileCh , CheckerRequire, XmlModeType, EnableUserWise_Ch, ISEnableCancelUser, allFieldOfForm.MerchantKey, dtEntityCode
                        ));
 
+                    return Result;
+                }
+                else
+                {
+                    var Result = Common.Getdata(dbcontext.MultipleResults("[dbo].[Sp_Entity]").With<CommonClass>().With<CommonClass>().Execute(
+                   "@QueryType", "@InstructingMemberId", "@XmlSponsorBankCode", "@Type","@EntityId" ,"@Code", "@Name", "@ContactPerson",
+               "@SponsorBankCode", "@UtilityCode", "@SponsorBankName", "@UserId", "@Addr1", "@Email", "@CountryId", "@CityId", "@StateId",
+                       "@Mobile", "@Pincode", "@ImagePath", "@UserName", "@password", "@passwordKey"
+                       , "@DebitType", "@FrequencyType", "@ToDebit", "@Amount", "@Activate", "@XmlPaymentMode", "@EntityBusinessCode", "@IsOverMandate", "@IsRefrenceCheck",
+                        "@IsValidationCountEnable",
+                         "@BankValidationAdminCount", "@BankValidationUserCount", "@AcValidationAdminCount", "@AcValidationUserCount", "@IsRefNumerc",
+                         "@IsShowMandateMode", "@IsSendEmailCustomer", "@IschkEmandate", "@IschkPhysical", "@Xmldebittype", "@XmlToDebit", "@XmlType", "@Xmlfrequency", "@chkIsRefrence2Mandatory", "@dtBankAmount", "@IsThirdTransaction",
+                         "@chkIsZipSure", "@chkIsAllowEManadte", "@ISTodateMandatoryEnach", "@APPId", "@XmlFileName", "@AccountNumber", "@ReCheck", "@CheckerRequire", "@XmlModeType", "@IsEnableUserCheck", "@ISEnableCancelUser", "@MerchantKey", "@dtEntityCode",
+                        "UpdateData", allFieldOfForm.InstructingMenmerId, dtBankCode, allFieldOfForm.Type, EntityId , allFieldOfForm.Code, allFieldOfForm.EntityName,
 
-                //}
-                return Result;
+                       allFieldOfForm.Name, allFieldOfForm.BankCode, allFieldOfForm.UtilityCode, allFieldOfForm.BankName, UserId, allFieldOfForm.Address, allFieldOfForm.Email, allFieldOfForm.Country, allFieldOfForm.City
+
+                       , allFieldOfForm.State, allFieldOfForm.MobileNo, allFieldOfForm.PinCode, allFieldOfForm.FullPath, allFieldOfForm.UserName, password, passwordKey,
+
+                       allFieldOfForm.DebitType, allFieldOfForm.FrequencyType, allFieldOfForm.ToDebit, allFieldOfForm.Amount, Activate, dtPaymentMode, EntityBCode, IsOverPrintMandate, IsRefCheck_Ch, IsValidationCountEnableCh
+
+                       , allFieldOfForm.BankValidationAdminCount, allFieldOfForm.BankValidationUserCount, allFieldOfForm.AcValidationAdminCount, allFieldOfForm.AcValidationUserCount, IsRefNumerc, IsShowMandateMode, IsSendEmail, IsEMandate,
+
+                       IsPhysicalMandateCh, Xmldebittype, XmlToDebit, XmlType, Xmlfrequency, chkIsRefrence2Mandatory, dtBankAmount, IsThirdTransactionCh, chkIsZipSure_Ch,
+
+                       chkIsAllowEManadte_Ch, ISTodateMandatoryEnach_Ch,
+
+                      allFieldOfForm.AppID, XmlFileName, allFieldOfForm.AccountNumber, recheckthepresentmentfileCh, CheckerRequire, XmlModeType, EnableUserWise_Ch, ISEnableCancelUser, allFieldOfForm.MerchantKey, dtEntityCode
+                      ));
+                    return Result;
+                }
+                
             }
 
             catch (Exception ex)
@@ -523,6 +805,22 @@ namespace QuickZipWebAPI.Models.EntitySetup
             try
             {
                 var Result = Common.Getdata(dbcontext.MultipleResults("[dbo].[Sp_Entity]").With<BindCity>().Execute("@QueryType", "@StateId", "BindCity", StateId));
+                return Result;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Dictionary<string, object> EditDataDataAccess(string EntityId)
+        {
+            try
+            {
+                var Result = Common.Getdata(dbcontext.MultipleResults("[dbo].[Sp_Entity]").With<EditDataClass1>().With<EditDataClass2>().With<EditDataClass3>().With<EditDataClass4>().
+                   With<EditDataAny>().With<EditdataClass5>().With<EditDataClass6>().With<EditDataClass7>().With<EditDataClass8>().With<EditDataClass9>().With<EditDataClass10>().
+                   With<EditDataClass11>().With<EditDataClass12>().With<EditDataClass13>().With<EditDataClass14>().Execute("@QueryType", "@EntityId", "EditEntity", EntityId));
                 return Result;
             }
 

@@ -90,5 +90,23 @@ namespace QuickZipWebAPI.Models.EntitySetup
         public Boolean Quarterly_Ch { get; set; }
         public Boolean Yearly_Ch { get; set; }
         public Boolean Presented_Ch { get; set; }
+        public Boolean ValidationByCustomer_Ch { get; set; }
+        public Boolean ValidationByCorporate_Ch { get; set; }
+        public Boolean OCRCode_Ch { get; set; }
+        public Boolean QRCode_Ch { get; set; }
+        public Boolean Logo_Ch { get; set; }
+        public Boolean PhoneNumber_ch { get; set; }
+        public Boolean E_mailID_Ch { get; set; }
+        public Boolean ValidateThroughEmail_Ch { get; set; }
+        public Boolean Manual_Ch { get; set; }
+        public Boolean SMS_Ch { get; set; }
+        public Boolean DebitValidateThroughEmail { get; set; }
+        public Boolean DebitManual { get; set; }
+        public Boolean DebitSMS { get; set; }
+        public Boolean AadhaarValidateThroughEmail { get; set; }
+        public Boolean AadhaarManual { get; set; }
+        public Boolean AadhaarSMS { get; set; }
+        public Boolean Accountvalidation_Ch { get; set; }
+        public Boolean Presentment_Ch { get; set; }
     }
 }
