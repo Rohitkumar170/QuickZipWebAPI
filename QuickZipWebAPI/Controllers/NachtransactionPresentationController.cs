@@ -3,10 +3,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using QuickZip.Models.nachtransactionpresentation;
+using QuickZip.Models;
 using QuickZipWebAPI.Models.nachtransactionpresentation;
-using QuickZipWebAPI.Models;
 
-namespace QuickZipWebAPI.Controllers
+namespace QuickZip.Controllers
 {
     public class NachtransactionPresentationController : ApiController
     {
@@ -25,9 +26,9 @@ namespace QuickZipWebAPI.Controllers
         }
         [HttpGet]
         [Route("api/NachtransactionPresentation/BindGridForm/{Bank}/{UserId}/{EntityId}")]
-        public IEnumerable<NachTransactionPrsentationBindForm> BindGridForm(string Bank,string UserId, string EntityId)
+        public IEnumerable<NachTransactionPrsentationBindForm> BindGridForm(string Bank, string UserId, string EntityId)
         {
-            return obj.BindGridForm(Bank,UserId, EntityId);
+            return obj.BindGridForm(Bank, UserId, EntityId);
         }
         [HttpGet]
         [Route("api/NachtransactionPresentation/BindMainGrid/{UserId}")]

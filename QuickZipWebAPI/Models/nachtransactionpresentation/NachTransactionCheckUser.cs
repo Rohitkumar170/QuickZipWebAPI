@@ -7,9 +7,9 @@ namespace QuickZipWebAPI.Models.nachtransactionpresentation
 {
     public class NachTransactionCheckUser
     {
-        public Int64 PresentmentChecker { get; set; }
-        public Int64 PresentmentMaker{ get; set; }
-        public string admin { get; set; }
+        public Nullable <Int64> PresentmentChecker { get; set; }
+        public Nullable <Int64> PresentmentMaker { get; set; }
+       // public IN admin { get; set; }
 
 
     }
