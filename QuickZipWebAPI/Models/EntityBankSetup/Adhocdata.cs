@@ -17,7 +17,7 @@ namespace QuickZipWebAPI.Models.EntityBankSetup
         public Nullable<Boolean> chkcsv { get; set; }
         public Nullable<Boolean> chkxml { get; set; }
         public string rdoDate { get; set; }
-        public Nullable<Int64> ddlday { get; set; }
+        public string ddlday { get; set; }
         
         public Nullable<Int64> ddldate { get; set; }
         public string txtdatepicker { get; set; }
