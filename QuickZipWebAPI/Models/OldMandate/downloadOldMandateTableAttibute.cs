@@ -30,6 +30,7 @@ namespace QuickZipWebAPI.Models.OldMandate
         //public string ToDebit { get; set; }
 
 
+
         //public Boolean IsMobileData { get; set; }
         //public string createdon { get; set; }
         //public string IsScan { get; set; }
@@ -51,6 +52,10 @@ namespace QuickZipWebAPI.Models.OldMandate
         //public string debittype { get; set; }
         //public string Frequency { get; set; }
         //public string ToDebit { get; set; }
+
+
+        public string sponsorbankcode { get; set; }
+        public string name { get; set; }
 
 
         //internal IEnumerable<downloadOldMandateTableAttibute> GetAllDataByRefrence(string userId, string refrence1)

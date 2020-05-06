@@ -16,18 +16,18 @@ namespace QuickZipWebAPI.Models.OldMandate
         QuickCheckEmandate_AngularEntities dbcontext = new QuickCheckEmandate_AngularEntities();
         List<OldMandateAttribute> dataList = new List<OldMandateAttribute>();
         List< downloadOldMandateTableAttibute> downlodmanlist = new List<downloadOldMandateTableAttibute>();
-
-        public IEnumerable<OldMandateAttribute> GetUserBankData(string UserId)
+      //  downloadOldMandateTableAttibute
+        public IEnumerable<downloadOldMandateTableAttibute> GetUserBankData(string UserId)
         {
             try
             {
 
-                var Data = dbcontext.MultipleResults("[dbo].[Sp_Mandate]").With<OldMandateAttribute>().Execute("@QueryType", "@UserId", "UserBank", DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))));
+                var Data = dbcontext.MultipleResults("[dbo].[Sp_Mandate]").With<downloadOldMandateTableAttibute>().Execute("@QueryType", "@UserId", "UserBank", DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))));
                 foreach(var dt in Data)
                 {
-                    dataList = dt.Cast<OldMandateAttribute>().ToList();
+                    downlodmanlist = dt.Cast<downloadOldMandateTableAttibute>().ToList();
                 }
-                return dataList;
+                return downlodmanlist;
             }
             catch(Exception ex)
             {

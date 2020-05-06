@@ -2,18 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 using BusinessLibrary;
 using QuickZipWebAPI.Entity;
-using System.IO;
-using System.Net;
-using System.Net.Mail;
-using System.Text;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Configuration;
-using System.Net.NetworkInformation;
-using QuickZipWebAPI.Models.Link_setup;
-
+using System.Threading.Tasks;
 namespace QuickZipWebAPI.Models.Link_setup
 {
     public class Link_setup
@@ -26,7 +20,6 @@ namespace QuickZipWebAPI.Models.Link_setup
 
             try
             {
-
                 var Result = Common.Getdata(dbcontext.MultipleResults("[dbo].[Sp_LinkSetup_AccessRights]").With<BindGrid>().Execute("@QueryType", "BindGridLinkItems"));
                 return Result;
             }
