@@ -82,8 +82,8 @@ namespace QuickZip.Models.nachtransactionpresentation
             try
 
             {
-                var Result = dbcontext.MultipleResults("[dbo].[Sp_Presenment]").With<NachTransactionMainGrid>().Execute("@QueryType", "@UserId", "BindHeaderData", UserId);
-                //var Result = dbcontext.MultipleResults("[dbo].[Sp_Presenment]").With<NachTransactionMainGrid>().Execute("@QueryType", "@UserId", "BindHeaderData", DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))));
+                /*var Result = dbcontext.MultipleResults("[dbo].[Sp_Presenment]").With<NachTransactionMainGrid>().Execute("@QueryType", "@UserId", "BindHeaderData", UserId)*/;
+                var Result = dbcontext.MultipleResults("[dbo].[Sp_Presenment]").With<NachTransactionMainGrid>().Execute("@QueryType", "@UserId", "BindHeaderData", DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))));
                 foreach (var Nachtransaction in Result)
                 {
                     dataList2 = Nachtransaction.Cast<NachTransactionMainGrid>().ToList();
@@ -140,7 +140,8 @@ namespace QuickZip.Models.nachtransactionpresentation
             try
 
             {
-                var Result = dbcontext.MultipleResults("[dbo].[Sp_Presenment]").With<NachTransactionBindRow>().Execute("@QueryType", "@UserId", "@EntityId", "@Fileno", "EditPresentation", DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%"))), FileNo);
+                var Result = dbcontext.MultipleResults("[dbo].[Sp_Presenment]").With<NachTransactionBindRow>().Execute("@QueryType", "@UserId", "@EntityId", "@Fileno", "EditPresentation", UserId,EntityId, FileNo);
+                //var Result = dbcontext.MultipleResults("[dbo].[Sp_Presenment]").With<NachTransactionBindRow>().Execute("@QueryType", "@UserId", "@EntityId", "@Fileno", "EditPresentation", DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%"))), FileNo);
                 foreach (var Nachtransaction in Result)
                 {
                     dataList5 = Nachtransaction.Cast<NachTransactionBindRow>().ToList();
@@ -179,8 +180,8 @@ namespace QuickZip.Models.nachtransactionpresentation
             try
 
             {
-                var Result = dbcontext.MultipleResults("[dbo].[Sp_Presenment]").With<NachTransactionUMRNOnChange>().Execute("@QueryType", "@UserId", "@EntityId", "@Refrence1", "BindUMRNOnChange", DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), EntityId, RefrenceNo);
-                //var Result = dbcontext.MultipleResults("[dbo].[Sp_Presenment]").With<NachTransactionUMRNOnChange>().Execute("@QueryType", "@UserId", "@EntityId", "@Refrence1", "BindUMRNOnChange", DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%"))), RefrenceNo);
+                //var Result = dbcontext.MultipleResults("[dbo].[Sp_Presenment]").With<NachTransactionUMRNOnChange>().Execute("@QueryType", "@UserId", "@EntityId", "@Refrence1", "BindUMRNOnChange", DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), EntityId, RefrenceNo);
+                var Result = dbcontext.MultipleResults("[dbo].[Sp_Presenment]").With<NachTransactionUMRNOnChange>().Execute("@QueryType", "@UserId", "@EntityId", "@Refrence1", "BindUMRNOnChange", DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%"))), RefrenceNo);
                 foreach (var Nachtransaction in Result)
                 {
                     dataList7 = Nachtransaction.Cast<NachTransactionUMRNOnChange>().ToList();

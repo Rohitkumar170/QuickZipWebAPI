@@ -12,7 +12,7 @@ namespace QuickZipWebAPI.Models.nachtransactionpresentation
         public string UtilityCode { get; set; }
         public string IFSC { get; set; }
         public string UserName { get; set; }
-        public Int32 UserID { get; set; }
+        public Nullable <Int32> UserID { get; set; }
         public double Bank_ID { get; set; }
 
         internal static object Cast<T>()

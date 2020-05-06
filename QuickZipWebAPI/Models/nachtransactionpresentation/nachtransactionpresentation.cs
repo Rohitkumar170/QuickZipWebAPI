@@ -8,7 +8,7 @@ namespace QuickZipWebAPI.Models.nachtransactionpresentation
     public class Nachtransactionpresentation
     {
 
-        public Int64 SponsorBankCodeId { get; set; }
+        public Nullable <Int64> SponsorBankCodeId { get; set; }
         public string SponsorBankCodeName { get; set; }
     }
 }
