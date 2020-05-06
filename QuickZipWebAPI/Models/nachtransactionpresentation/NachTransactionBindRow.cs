@@ -21,6 +21,7 @@ namespace QuickZipWebAPI.Models.nachtransactionpresentation
         public string UtilityCode { get; set; } //com
         public string AccountNumber { get; set; } //com
         //public Int64 UserID { get; set; } //comp
+
         //public string presentmentchecker { get; set; } //comp
         //public string presentmentmaker { get; set; } //comp
 
