@@ -24,10 +24,10 @@ namespace QuickZip.Controllers
             return ESDA.BindGridDataAccess();
         }
         [HttpPost]
-        [Route("api/SaveData")]
-        public Dictionary<string, object> SaveDataApi([FromBody] AllFieldOfForm allFieldOfForm)
+        [Route("api/SaveData/{EntityId}")]
+        public Dictionary<string, object> SaveDataApi([FromBody] AllFieldOfForm allFieldOfForm, string EntityId)
         {
-            return ESDA.SaveDataDataAccess(allFieldOfForm);
+            return ESDA.SaveDataDataAccess(allFieldOfForm, EntityId);
         }
 
 
@@ -43,7 +43,18 @@ namespace QuickZip.Controllers
         {
             return ESDA.BindCityDataAccess(StateId);
         }
-
+        [HttpGet]
+        [Route("api/EditData/{EntityId}")]
+        public Dictionary<string, object> EditDataApi(string EntityId)
+        {
+            return ESDA.EditDataDataAccess(EntityId);
+        }
+        [HttpPost]
+        [Route("api/DeleteData/{EntityId}")]
+        public Dictionary<string, object> DeleteDataApi([FromBody] MainGrid MainGrid,string EntityId)
+        {
+            return ESDA.DeleteDataDataAccess(MainGrid, EntityId);
+        }
 
     }
 }
