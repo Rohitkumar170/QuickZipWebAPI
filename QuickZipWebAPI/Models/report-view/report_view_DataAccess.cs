@@ -7,11 +7,12 @@ using System.Data.SqlClient;
 using System.Configuration;
 using BusinessLibrary;
 using QuickZipWebAPI.Entity;
+using QuickZipWebAPI.Models.report_view;
 using System.Threading.Tasks;
 
 
 
-namespace QuickZip.Models.report_view
+namespace QuickZipWebAPI.Models.report_view
 {
     public class report_view_DataAccess
     {
