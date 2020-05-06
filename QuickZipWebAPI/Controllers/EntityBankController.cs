@@ -139,7 +139,7 @@ namespace QuickZipWebAPI.Controllers
             }
             else if (date == "W")
             {
-                if (adhocdata.ddlday == 0)
+                if (adhocdata.ddlday == "")
                 { }
                 else if (adhocdata.txtdatepicker1 == "")
                 { }
@@ -299,7 +299,7 @@ namespace QuickZipWebAPI.Controllers
             }
             else if (date == "W")
             {
-                if (adhocdata.ddlday == 0)
+                if (adhocdata.ddlday == "")
                 { }
                 else if (adhocdata.txtdatepicker1 == "")
                 { }
