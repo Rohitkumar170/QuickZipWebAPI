@@ -12,7 +12,7 @@ namespace QuickZipWebAPI.Controllers
     public class EBulkUploadedDataController : ApiController
     {
         EBulkUploadedDataClass EBulkUpdDt = new EBulkUploadedDataClass();
-        [HttpPost]
+        [HttpGet]
         [Route("api/EBulkUploadedData/GetAllData/{ActivityID}/{UserId}/{EntityId}/{TEUHID}/{LoadData}")]
 
        // string ActivityID, string UserId, string EntityId, string TEUHID, string LoadData

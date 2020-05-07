@@ -5,8 +5,8 @@ using System.Web;
 
 namespace QuickZipWebAPI.Models.EBulkUploadedData
 {
-    public class InvalidGridTableCountAttribute
+    public class ActivityIDAttribute
     {
-        public int TotalCount { get; set; }
+        public Int64 Id { get; set; }
     }
 }

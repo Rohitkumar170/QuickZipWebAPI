@@ -7,6 +7,6 @@ namespace QuickZipWebAPI.Models.EBulkUploadedData
 {
     public class MisMatchTableCount
     {
-        public string TotalCount { get; set; }
+        public Int32 TotalCount { get; set; }
     }
 }

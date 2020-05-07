@@ -746,6 +746,7 @@
     <Compile Include="Models\DownloadMandate\DownloadMandateGridDetails.cs" />
     <Compile Include="Models\EBulkUploadedData\AccountRelatedIssueAttribute.cs" />
     <Compile Include="Models\EBulkUploadedData\AccountRelatedIssueTableCount.cs" />
+    <Compile Include="Models\EBulkUploadedData\ActivityIDAttribute.cs" />
     <Compile Include="Models\EBulkUploadedData\EBulkUploadedDataClass.cs" />
     <Compile Include="Models\EBulkUploadedData\InvalidDataAttribute.cs" />
     <Compile Include="Models\EBulkUploadedData\InvalidGridTableCountAttribute.cs" />

@@ -7,7 +7,7 @@ namespace QuickZipWebAPI.Models.EBulkUploadedData
 {
     public class MisMatchAttribute
     {
-        public string statusofmandate { get; set; }
+        public string statusofmandate { get; set; }    //bit
         public string MandateId { get; set; }
         public string Refrence1 { get; set; }
         public string Customer1 { get; set; }
@@ -15,11 +15,11 @@ namespace QuickZipWebAPI.Models.EBulkUploadedData
         public string AcNo { get; set; }
         public string BeniName { get; set; }
         public string Tab { get; set; }
-        public string TEUHID { get; set; }
-        public string ActiviyID { get; set; }
+        public Int32 TEUHID { get; set; }
+        public Int64 ActiviyID { get; set; }
         public string NameAsBankRrds { get; set; }
-        public string CheckBoxStatus { get; set; }
-        public string UpdatedName { get; set; }
+        public Int32 CheckBoxStatus { get; set; }
+        public Int32 UpdatedName { get; set; }
         public string Description { get; set; }
     }
 }

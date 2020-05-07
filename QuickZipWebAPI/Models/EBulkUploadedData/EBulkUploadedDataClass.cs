@@ -21,10 +21,11 @@ namespace QuickZipWebAPI.Models.EBulkUploadedData
             try
             {
 
-                var Data = Common.Getdata(dbcontext.MultipleResults("Sp_Bulkmandate").With<MainGridAttribute>().With<MainGridTableCountAttribute>().With<InvalidDataAttribute>().With<InvalidGridTableCountAttribute>().With<ValidatedDataAttribute>().With<ValidatedDataTableCountAttribute>().With<AccountRelatedIssueAttribute>().With<AccountRelatedIssueTableCount>().With<MisMatchAttribute>().With<MisMatchTableCount>().With<ValidatedDataAttribute>().With<ValidatedDataTableCountAttribute>().Execute("@QueryType", "@ActivityId", "@UserId", "@EntityId", "@TEUHID", "@topVal", "ActivityWiseViewData", ActivityID,DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%"))), TEUHID, LoadData));
+                var Data = Common.Getdata(dbcontext.MultipleResults("Sp_Bulkmandate").With<MainGridAttribute>().With<MainGridTableCountAttribute>().With<InvalidDataAttribute>().With<InvalidGridTableCountAttribute>().With<ValidatedDataAttribute>().With<ValidatedDataTableCountAttribute>().With<ActivityIDAttribute>().With<AccountRelatedIssueAttribute>().With<AccountRelatedIssueTableCount>().With<MisMatchAttribute>().With<MisMatchTableCount>().With<ValidDataAttribute>().With<ValidDataTableCountAttibute>().Execute("@QueryType", "@ActivityId", "@UserId", "@EntityId", "@TEUHID", "@topVal", "ActivityWiseViewData", ActivityID,DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%"))), TEUHID, LoadData));
                 //foreach (var dt in Data)
-                //{
+                //{ 
                 //    dataList= dt.Cast<BulkEmandateAttribute>().ToList();
+                    
                 //}
                 return Data;
             }

@@ -7,6 +7,6 @@ namespace QuickZipWebAPI.Models.EBulkUploadedData
 {
     public class AccountRelatedIssueTableCount
     {
-        public string TotalCount { get; set; }
+        public Int32 Totalcount { get; set; }
     }
 }
