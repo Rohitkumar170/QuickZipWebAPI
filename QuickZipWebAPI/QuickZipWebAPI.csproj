@@ -49,7 +49,7 @@
       <HintPath>..\BusinessLibrary\bin\Debug\BusinessLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Encryption">
-      <HintPath>..\..\..\Vimal\DLL\Encryption.dll</HintPath>
+      <HintPath>..\..\..\QuickZip\Banking System\bin\Encryption.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -179,13 +179,13 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AccessRightsController.cs" />
     <Compile Include="Controllers\AllUMRNController.cs" />
     <Compile Include="Controllers\BankFormController.cs" />
     <Compile Include="Controllers\BulkEMandateController.cs" />
     <Compile Include="Controllers\DownloadEmandateController.cs" />
     <Compile Include="Controllers\DownloadMandateController.cs" />
     <Compile Include="Controllers\DownloadoldemandateController.cs" />
-    <Compile Include="Controllers\EBulkUploadedDataController.cs" />
     <Compile Include="Controllers\EntityBankController.cs" />
     <Compile Include="Controllers\EntitySetupController.cs" />
     <Compile Include="Controllers\HistoricalMandateController.cs" />
@@ -712,6 +712,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AccessRights\AccessRightDetails.cs" />
+    <Compile Include="Models\AccessRights\AccessRights.cs" />
+    <Compile Include="Models\AccessRights\AccessRightsEntityDetails.cs" />
     <Compile Include="Models\Allumrn\Allumrnaccesslayer.cs" />
     <Compile Include="Models\Allumrn\GridData.cs" />
     <Compile Include="Models\Allumrn\GridDataDetails.cs" />
@@ -744,24 +747,14 @@
     <Compile Include="Models\DownloadMandate\DownloadMandate.cs" />
     <Compile Include="Models\DownloadMandate\DownloadMandateDetails.cs" />
     <Compile Include="Models\DownloadMandate\DownloadMandateGridDetails.cs" />
-    <Compile Include="Models\EBulkUploadedData\AccountRelatedIssueAttribute.cs" />
-    <Compile Include="Models\EBulkUploadedData\AccountRelatedIssueTableCount.cs" />
-    <Compile Include="Models\EBulkUploadedData\ActivityIDAttribute.cs" />
-    <Compile Include="Models\EBulkUploadedData\EBulkUploadedDataClass.cs" />
-    <Compile Include="Models\EBulkUploadedData\InvalidDataAttribute.cs" />
-    <Compile Include="Models\EBulkUploadedData\InvalidGridTableCountAttribute.cs" />
-    <Compile Include="Models\EBulkUploadedData\MainGridAttribute.cs" />
-    <Compile Include="Models\EBulkUploadedData\MainGridTableCountAttribute.cs" />
-    <Compile Include="Models\EBulkUploadedData\MisMatchAttribute.cs" />
-    <Compile Include="Models\EBulkUploadedData\MisMatchTableCount.cs" />
-    <Compile Include="Models\EBulkUploadedData\ValidatedDataAttribute.cs" />
-    <Compile Include="Models\EBulkUploadedData\ValidatedDataTableCountAttribute.cs" />
-    <Compile Include="Models\EBulkUploadedData\ValidDataAttribute.cs" />
-    <Compile Include="Models\EBulkUploadedData\ValidDataTableCountAttibute.cs" />
+    <Compile Include="Models\EntityBankSetup\Adhocdata.cs" />
     <Compile Include="Models\EntityBankSetup\Bank.cs" />
     <Compile Include="Models\EntityBankSetup\Entity.cs" />
     <Compile Include="Models\EntityBankSetup\EntityBank.cs" />
     <Compile Include="Models\EntityBankSetup\EntityData.cs" />
+    <Compile Include="Models\EntityBankSetup\Table1.cs" />
+    <Compile Include="Models\EntityBankSetup\Table2.cs" />
+    <Compile Include="Models\EntityBankSetup\Table3.cs" />
     <Compile Include="Models\EntitySetup\AllFieldOfForm.cs" />
     <Compile Include="Models\EntitySetup\BindBank.cs" />
     <Compile Include="Models\EntitySetup\BindCity.cs" />
@@ -903,7 +896,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\EBulkUploadedData\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

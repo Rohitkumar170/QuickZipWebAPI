@@ -7,7 +7,7 @@ namespace QuickZipWebAPI.Models.EntityBankSetup
 {
     public class Bank
     {
-        public double SponsorBankCodeId { get; set; }
+        public Nullable<double> SponsorBankCodeId { get; set; }
         public string SponsorBankName { get; set; }
     }
 }
