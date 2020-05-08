@@ -761,6 +761,7 @@
     <Compile Include="Models\EntitySetup\BindCountry.cs" />
     <Compile Include="Models\EntitySetup\BindState.cs" />
     <Compile Include="Models\EntitySetup\CommonClass.cs" />
+    <Compile Include="Models\EntitySetup\CommonClass1.cs" />
     <Compile Include="Models\EntitySetup\EditDataAny.cs" />
     <Compile Include="Models\EntitySetup\EditDataClass1.cs" />
     <Compile Include="Models\EntitySetup\EditDataClass10.cs" />

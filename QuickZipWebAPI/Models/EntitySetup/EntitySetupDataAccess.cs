@@ -721,7 +721,7 @@ namespace QuickZipWebAPI.Models.EntitySetup
 
                 {
 
-                    var Result = Common.Getdata(dbcontext.MultipleResults("[dbo].[Sp_Entity]").With<CommonClass>().With<CommonClass>().Execute(
+                    var Result = Common.Getdata(dbcontext.MultipleResults("[dbo].[Sp_Entity]").With<CommonClass1>().With<CommonClass>().Execute(
                     "@QueryType", "@InstructingMemberId", "@XmlSponsorBankCode", "@Type", "@Code", "@Name", "@ContactPerson",
                 "@SponsorBankCode", "@UtilityCode", "@SponsorBankName", "@UserId", "@Addr1", "@Email", "@CountryId", "@CityId", "@StateId",
                         "@Mobile", "@Pincode", "@ImagePath", "@UserName", "@password", "@passwordKey"
