@@ -47,5 +47,29 @@ namespace QuickZipWebAPI.Controllers
         {
             return objbankform.Edit(mandateid, UserId, EntityId);
         }
+        [HttpGet]
+        [Route("api/BankForm/ChecKmandate/{mandateId}")]
+        public Dictionary<string, object> ChecKmandate(string mandateId)
+        {
+            return objbankform.ChecKmandate(mandateId);
+        }
+        [HttpGet]
+        [Route("api/BankForm/RemoveImage/{mandateId}")]
+        public Dictionary<string, object> RemoveImage(string mandateId)
+        {
+            return objbankform.RemoveImage(mandateId);
+        }
+        [HttpGet]
+        [Route("api/BankForm/UpdateAutoRejectReasonBankValidation/{mandateid}/{UserId}")]
+        public Dictionary<string, object> UpdateAutoRejectReasonBankValidation(string mandateid, string UserId)
+        {
+            return objbankform.UpdateAutoRejectReasonBankValidation(mandateid, UserId);
+        }
+        [HttpGet]
+        [Route("api/BankForm/UpdateFirst/{mandateid}/{UserId}")]
+        public Dictionary<string, object> UpdateFirst(string mandateid, string UserId)
+        {
+            return objbankform.UpdateFirst(mandateid, UserId);
+        }
     }
 }
