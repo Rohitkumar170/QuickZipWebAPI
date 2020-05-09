@@ -130,13 +130,14 @@ namespace QuickZipWebAPI.Models.BankForm
         public Nullable<Int64> MandateId { get; set; }
         public string Description { get; set; }
         public string Status { get; set; }
-        public DateTime Date { get; set; }
+        public string Date { get; set; }
         public string Time { get; set; }
         public int result { get; set; }
     }
     public class SaveData3
     {
         public string Bank { get; set; }
+        public string Bankname { get; set; }
     }
     public class SaveData4
     {
@@ -154,6 +155,15 @@ namespace QuickZipWebAPI.Models.BankForm
         public Nullable<bool> IsLiveIMPS { get; set; }
         public Nullable<bool> IsNachLive { get; set; }
         public Nullable<bool> is_enach_live { get; set; }
+        public string FullBank { get; set; }
+    }
+    public class SaveData16
+    {
+        public string Emailid { get; set; }
+        public string PhoneNumber { get; set; }
+        public Nullable<bool> IsPhysical { get; set; }
+        public Nullable<bool> Enach { get; set; }      
+        public string EMandatetype { get; set; }
     }
     public class SaveData7
     {

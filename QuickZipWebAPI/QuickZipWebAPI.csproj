@@ -735,7 +735,9 @@
     <Compile Include="Models\BankForm\BindLogincheck.cs" />
     <Compile Include="Models\BankForm\BindLogoImageDetails.cs" />
     <Compile Include="Models\BankForm\BindSponserCode.cs" />
+    <Compile Include="Models\BankForm\ChecKmandate.cs" />
     <Compile Include="Models\BankForm\CheckReference.cs" />
+    <Compile Include="Models\BankForm\RemoveImage.cs" />
     <Compile Include="Models\BankForm\SaveData.cs" />
     <Compile Include="Models\BulkEmandate\BulkEmandateAttribute.cs" />
     <Compile Include="Models\BulkEmandate\BulkEMandateClass.cs" />

@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.IO;
 using BusinessLibrary;
 using QuickZipWebAPI.Entity;
 using System.Threading.Tasks;
@@ -111,6 +113,68 @@ namespace QuickZipWebAPI.Models.BankForm
                 throw ex;
             }
         }
+        public Dictionary<string, object> ChecKmandate(string mandateId)
+        {
+            try
+            {
+                var Result = Common.Getdata(dbcontext.MultipleResults("[dbo].[Sp_Mandate]").With<ChecKmandate>().Execute("@QueryType", "@MandateId", "ChecKmandate", mandateId));                
+                return Result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public Dictionary<string, object> RemoveImage(string mandateId)
+        {
+            try
+            {
+                List<RemoveImage> dataList = new List<RemoveImage>();
+               
+                var Result = Common.Getdata(dbcontext.MultipleResults("[dbo].[Sp_Mandate]").With<RemoveImage>().Execute("@QueryType", "@MandateId", "RemoveImage", mandateId));
+                foreach (var Logindata in Result)
+                {
+                   
+                }
 
+                   
+                //    File.Delete(HttpContext.Current.Server.MapPath(Convert.ToString(dt.Rows[0]["JPGPath"])));
+                //File.Delete(HttpContext.Current.Server.MapPath(Convert.ToString(dt.Rows[0]["TIPPath"])));
+                //string temp = "../FullMandate/" + DbSecurity.Decrypt(mandateId) + "/" + ConfigurationManager.AppSettings["DownloadFileName"].ToString() + "_" + DateTime.Now.ToString("ddMMyyyy") + "_" + Convert.ToString(dt.Rows[0]["Refrence1"]) + ".jpg";
+                //string fullpath = HttpContext.Current.Server.MapPath(temp);
+                //File.Delete(fullpath);
+                return Result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Dictionary<string, object> UpdateAutoRejectReasonBankValidation(string mandateid, string UserId)
+        {
+            try
+            {
+                var Result = Common.Getdata(dbcontext.MultipleResults("[dbo].[Sp_Mandate]").With<SaveData8>().Execute("@QueryType", "@MandateId", "@UserId", "UpdateAutoRejectReasonBankValidation", mandateid, DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%")))));
+                return Result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Dictionary<string, object> UpdateFirst(string mandateid, string UserId)
+        {
+            try
+            {
+                var Result = Common.Getdata(dbcontext.MultipleResults("[dbo].[Sp_Mandate]").With<SaveData0>().With<SaveData1>().With<SaveData2>().With<SaveData3>().With<SaveData4>().With<SaveData5>().With<SaveData6>().With<SaveData16>().Execute("@QueryType", "@MandateId", "@UserId", "UpdateIsFirstvalidation", mandateid, DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%")))));
+                return Result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
