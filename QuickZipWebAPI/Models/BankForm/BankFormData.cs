@@ -63,7 +63,7 @@ namespace QuickZipWebAPI.Models.BankForm
                          "@ToDebit", "@AcNo", "@BankName", "@IFSC", "@MICR", "@AmountRupees", "@Refrence1", "@Refrence2", "@PhNumber",
                                  "@EmailId", "@From", "@To", "@Customer1", "@Customer2", "@Customer3", "@DateOnMandate", "@MandateMode", "@AmountWords", "@CategoryCode", "SaveData", savedata.Sponsorcode, savedata.Utilitycode, savedata.Debittype, savedata.Frequency, DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%"))),
                                  savedata.Todebit, savedata.Bankaccountno, savedata.Withbank,
-                        savedata.IFSC, savedata.MICR, savedata.Amountrupees, savedata.Refrence1, savedata.Refrence2, savedata.Phoneno, savedata.Email, savedata.PeriodFrom, savedata.PeriodTo, savedata.Customer1,
+                        savedata.IFSC.ToUpper(), savedata.MICR.ToUpper(), savedata.Amountrupees, savedata.Refrence1, savedata.Refrence2, savedata.Phoneno, savedata.Email, savedata.PeriodFrom, savedata.PeriodTo, savedata.Customer1,
                         savedata.Customer2, savedata.Customer3, savedata.UMRNDATE, savedata.MandateMode, savedata.Amount, savedata.Catagorycode));
                 }
                 else
@@ -72,7 +72,7 @@ namespace QuickZipWebAPI.Models.BankForm
                          "@ToDebit", "@AcNo", "@BankName", "@IFSC", "@MICR", "@AmountRupees", "@Refrence1", "@Refrence2", "@PhNumber",
                                  "@EmailId", "@From", "@To", "@Customer1", "@Customer2", "@Customer3", "@DateOnMandate", "@MandateMode", "@AmountWords", "@CategoryCode", "@MandateId", "UpdateData", savedata.Sponsorcode, savedata.Utilitycode, savedata.Debittype, savedata.Frequency, DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%"))), DbSecurity.Decrypt(HttpContext.Current.Server.UrlDecode(EntityId.Replace("_", "%"))),
                                  savedata.Todebit, savedata.Bankaccountno, savedata.Withbank,
-                        savedata.IFSC, savedata.MICR, savedata.Amountrupees, savedata.Refrence1, savedata.Refrence2, savedata.Phoneno, savedata.Email, savedata.PeriodFrom, savedata.PeriodTo, savedata.Customer1,
+                        savedata.IFSC.ToUpper(), savedata.MICR.ToUpper(), savedata.Amountrupees, savedata.Refrence1, savedata.Refrence2, savedata.Phoneno, savedata.Email, savedata.PeriodFrom, savedata.PeriodTo, savedata.Customer1,
                         savedata.Customer2, savedata.Customer3, savedata.UMRNDATE, savedata.MandateMode, savedata.Amount, savedata.Catagorycode,mandateid));
                 }
                 return Result;
