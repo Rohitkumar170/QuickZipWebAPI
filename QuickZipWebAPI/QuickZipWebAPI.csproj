@@ -49,7 +49,7 @@
       <HintPath>..\BusinessLibrary\bin\Debug\BusinessLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Encryption">
-      <HintPath>..\..\..\QuickZip\Banking System\bin\Encryption.dll</HintPath>
+      <HintPath>..\..\..\..\..\VSS\DLL\Encryption.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -188,6 +188,7 @@
     <Compile Include="Controllers\DownloadoldemandateController.cs" />
     <Compile Include="Controllers\EntityBankController.cs" />
     <Compile Include="Controllers\EntitySetupController.cs" />
+    <Compile Include="Controllers\FatehTestController.cs" />
     <Compile Include="Controllers\HistoricalMandateController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LinkSetupController.cs" />
@@ -813,6 +814,7 @@
     <Compile Include="Models\report-view\bindgrid1.cs" />
     <Compile Include="Models\report-view\BindUser.cs" />
     <Compile Include="Models\report-view\report_view_DataAccess.cs" />
+    <Compile Include="Models\Test\Testmodel.cs" />
     <Compile Include="Models\UMRNUpload\GridSuccess.cs" />
     <Compile Include="Models\UMRNUpload\GridUnsuccess.cs" />
     <Compile Include="Models\UMRNUpload\MainGrid.cs" />
